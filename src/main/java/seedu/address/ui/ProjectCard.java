@@ -43,7 +43,8 @@ public class ProjectCard extends UiPart<Region> {
     @FXML
     private Label description;
     @FXML
-    private TableView<Data> table;
+    private TableView<Deadline> table;
+//    private TableView<Data> table;
 
 
     /**
@@ -74,20 +75,22 @@ public class ProjectCard extends UiPart<Region> {
         doneCol.setCellValueFactory(
                 new PropertyValueFactory<>("isDone"));
         table.getColumns().addAll(doneCol, priorityCol,dateCol,descriptionCol);
-        ObservableList<Data> data = FXCollections.observableList(project.getProjectDeadlines().stream()
-                .map(deadline ->new Data(deadline)).collect(Collectors.toList()));
-        table.setItems(data);
+//        ObservableList<Data> data = FXCollections.observableList(project.getProjectDeadlines().stream()
+//                .map(deadline ->new Data(deadline)).collect(Collectors.toList()));
+//        table.setItems(data);
+        table.setItems(project.getProjectDeadlinesList());
     }
+    
     public static class Data {
         private final SimpleStringProperty date;
         private final SimpleStringProperty description;
         private final SimpleStringProperty priority;
 
-        private final SimpleBooleanProperty isDone;
+        private SimpleBooleanProperty isDone;
         private Data(Deadline deadline){
-            date = new SimpleStringProperty(deadline.getDate().toString());
+            date = new SimpleStringProperty(deadline.getObjDate().toString());
             description = new SimpleStringProperty(deadline.getDescription().desc);
-            priority = new SimpleStringProperty(deadline.getPriority().toString());
+            priority = new SimpleStringProperty(deadline.getObjPriority().toString());
             isDone = new SimpleBooleanProperty(deadline.getIsDone());
 
         }

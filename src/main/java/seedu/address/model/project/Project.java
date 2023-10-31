@@ -19,10 +19,14 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_SALARY;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import seedu.address.logic.parser.Prefix;
 import seedu.address.model.commons.Name;
 import seedu.address.model.person.Person;
@@ -36,6 +40,7 @@ public class Project {
     private final Name projectName;
     private final Description description;
     private final Set<Deadline> deadlines = new HashSet<>();
+    private ObservableList<Deadline> deadlinesList;
     public static final Prefix[] unusedPrefixes = new Prefix[]{ PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING,
             PREFIX_GITHUBID, PREFIX_ADDRESS, PREFIX_DOCUMENT, PREFIX_EMAIL, PREFIX_ORGANISATION, PREFIX_PHONE, 
             PREFIX_PROJECT, PREFIX_ROLE };
@@ -54,6 +59,7 @@ public class Project {
         this.projectName = projectName;
         this.description = desc;
         this.deadlines.addAll(deadlines);
+        this.deadlinesList = FXCollections.observableList(deadlines.stream().collect(Collectors.toList()));
     }
     public Project(String projectName) {
         this(new Name(projectName),new Description(""),new HashSet<>());
@@ -106,6 +112,22 @@ public class Project {
      */
     public Set<Deadline> getProjectDeadlines() {
         return Collections.unmodifiableSet(deadlines);
+    }
+
+    public ObservableList<Deadline> getProjectDeadlinesList() {
+        return deadlinesList;
+    }
+    
+    public void markDeadline(int index) {
+        deadlinesList.get(index).mark();
+    }
+
+    public void unmarkDeadline(int index) {
+        deadlinesList.get(index).unmark();
+    }
+
+    public int deadlineListSize() {
+        return deadlinesList.size();
     }
     public boolean isSameProject(Project otherProject) {
         if (otherProject == this) {

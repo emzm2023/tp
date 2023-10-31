@@ -28,6 +28,8 @@ import seedu.address.logic.commands.edit.EditDeveloperCommand;
 import seedu.address.logic.commands.edit.EditProjectCommand;
 import seedu.address.logic.commands.imports.ImportDeveloperCommand;
 import seedu.address.logic.commands.imports.ImportClientCommand;
+import seedu.address.logic.commands.mark.MarkDeadlineCommand;
+import seedu.address.logic.commands.mark.UnmarkDeadlineCommand;
 import seedu.address.logic.parser.add.AddClientCommandParser;
 import seedu.address.logic.parser.add.AddDeveloperCommandParser;
 import seedu.address.logic.parser.add.AddProjectCommandParser;
@@ -40,6 +42,8 @@ import seedu.address.logic.parser.imports.ImportDeveloperCommandParser;
 import seedu.address.logic.parser.find.FindClientCommandParser;
 import seedu.address.logic.parser.find.FindDeveloperCommandParser;
 import seedu.address.logic.parser.find.FindProjectCommandParser;
+import seedu.address.logic.parser.mark.MarkDeadlineCommandParser;
+import seedu.address.logic.parser.mark.UnmarkDeadlineCommandParser;
 
 /**
  * Parses user input.
@@ -123,7 +127,13 @@ public class AddressBookParser {
 
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
-
+            
+        case MarkDeadlineCommand.COMMAND_WORD:
+            return new MarkDeadlineCommandParser().parse(arguments);
+            
+        case UnmarkDeadlineCommand.COMMAND_WORD:
+            return new UnmarkDeadlineCommandParser().parse(arguments);
+            
         default:
             logger.finer("This user input caused a ParseException: " + userInput);
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
