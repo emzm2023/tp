@@ -18,7 +18,7 @@ import seedu.address.model.person.exceptions.DuplicateClientException;
  * A client is considered unique by comparing using {@code Client#isSameClient(Client)}.
  * As such, adding and updating of clients use Client#isSameClient(Client) for equality to ensure that the client being added or updated is unique in terms of identity in the UniqueClientList.
  * However, the removal of a client uses Client#equals(Object) to ensure that the client with exactly the same fields will be removed.
- * <p>
+ * 
  * Supports a minimal set of list operations.
  *
  * @see Client#isSameClient(Client)

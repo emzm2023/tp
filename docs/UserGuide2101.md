@@ -3,13 +3,17 @@ layout: page
 title: UserGuide
 pageNav: 3
 ---
+
 #### Welcome to CodeContact!
 
 ##### Your personal project management tool to keep up with your schedules
 
-> Seamlessly integrate information of your developers, clients, and projects, simplifying access to coding-related contacts, facilitating collaboration, and offering command-line efficiency for project managers
+> Seamlessly integrate information of your developers, clients, and projects, simplifying access to coding-related
+> contacts, facilitating collaboration, and offering command-line efficiency for project managers
 
-CodeContact is a **desktop app for handling and synchronising project information, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CodeContact can get your contact management tasks done faster than traditional GUI apps.
+CodeContact is a **desktop app for handling and synchronising project information, optimized for use via a Command Line
+Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CodeContact
+can get your contact management tasks done faster than traditional GUI apps.
 
 > If you are new to CodeContact, here is how you can get started!
 
@@ -17,13 +21,15 @@ CodeContact is a **desktop app for handling and synchronising project informatio
 
 * ###Table of Contents
   {:toc}
+
 --------------------------------------------------------------------------------------------------------------------
+
 1. Navigating the user guide
 2. Navigating the User Interface (GUI)
 3. Command Summary
 4. Available Features
 5. Frequently Asked Questions (FAQ)
-   
+
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer.
@@ -32,19 +38,22 @@ CodeContact is a **desktop app for handling and synchronising project informatio
 
 1. Copy the file to the folder you want to use as the _home folder_ for your CodeContact.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar codecontact.jar` command to run the application.<br>
+1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar codecontact.jar`
+   command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)<br>
    For help navigating the GUI, click [here](#navigating)
-   
-1. 
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+1.
+
+1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will
+   open the help window.<br>
    Some example commands you can try:
 
     * `list developers` : Lists all developers.
 
-    * `n/Amy p/12345678 e/any.u.nus.edu a/NUS UTOWN d/06-09-2023 r/Developer s/4999 pr/{PROJECT1, PROJECT2…}` : Adds a contact named `John Doe` to the Address Book.
+    * `n/Amy p/12345678 e/any.u.nus.edu a/NUS UTOWN d/06-09-2023 r/Developer s/4999 pr/{PROJECT1, PROJECT2…}` : Adds a
+      contact named `John Doe` to the Address Book.
 
     * `delete developer 3` : Deletes the 3rd contact shown in the current list.
 
@@ -53,16 +62,13 @@ CodeContact is a **desktop app for handling and synchronising project informatio
     * `exit` : Exits the app.
 
 1. Refer to the [Features](#features) below for details of each command.
+
 --------------------------------------------------------------------------------------------------------------------
+
 ## Navigating the User Interface (GUI)
 
-
-
-
-
-
-
 --------------------------------------------------------------------------------------------------------------------
+
 ## Features
 
 <div markdown="block" class="alert alert-info">
@@ -81,13 +87,17 @@ CodeContact is a **desktop app for handling and synchronising project informatio
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be
+  ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
-* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
+* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines
+  as space characters surrounding line-breaks may be omitted when copied over to the application.
+
 </div>
 
 ### Adding new information : `add`
+
 * What it does:
     * Manager can add a new employee to the list of people into the data one by one
 * Format
@@ -95,7 +105,7 @@ CodeContact is a **desktop app for handling and synchronising project informatio
     * `n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS d/DATE_JOINED r/ROLE s/SALARY pr/{PROJECT1, PROJECT2…}`
 * Example
     * User types: `create new employee`
-    * CLI  shows: `Input employee details in the format below:`
+    * CLI shows: `Input employee details in the format below:`
       `n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS d/DATE_JOINED r/ROLE `
     * User types: `n/AMY p/87654321 e/amy@u.nus.edu a/NUS UTOWN d/06 Sep 2023 r/Developer s/4999`
 * Acceptable parameters
@@ -105,7 +115,8 @@ CodeContact is a **desktop app for handling and synchronising project informatio
     * Date joined has to be of format `dd mmm yyyy `(E.x 09 Sept 2022)
     * Salary has to be at least 4 digits
     * Project should be valid project name already listed in the company, multiple projects have to be comma separated
-    * Password is at least 8 characters long, with a combination of uppercase letters, lowercase letters, numbers, and symbols
+    * Password is at least 8 characters long, with a combination of uppercase letters, lowercase letters, numbers, and
+      symbols
 * When command succeeds
     * Continuing from the above example, CLI shows:
     ```
@@ -133,6 +144,7 @@ CodeContact is a **desktop app for handling and synchronising project informatio
 * Relevant UI mock-ups
 
 ### Edit information details : `edit`
+
 * What it does:
     * Allows managers to change the details of the information stored
 * Format
@@ -141,10 +153,13 @@ CodeContact is a **desktop app for handling and synchronising project informatio
     * `n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS d/DATE_JOINED r/ROLE s/CHANGED_SALARY pr/{PROJECT1, PROJECT2…} u/USERNAME pa/PASSWORD`
 * Example
     * User types: `update Amy`
-    * CLI  shows: `Here are the employee details: AMY 87654321 amy@u.nus.edu NUS UTOWN 06 sept Developer 4999 amy password123`
-    * User types: `n/AMY p/87654321 e/amy@u.nus.edu a/NUS UTOWN d/06 sept r/Developer s/4999 pr/{login} u/amy pa/password12345`
-    * CLI  shows: `Here are the updated employee details: AMY 87654321 amy@u.nus.edu NUS UTOWN 06 sept Developer 6999 amy password123`
-* Acceptable parameters 
+    * CLI
+      shows: `Here are the employee details: AMY 87654321 amy@u.nus.edu NUS UTOWN 06 sept Developer 4999 amy password123`
+    * User
+      types: `n/AMY p/87654321 e/amy@u.nus.edu a/NUS UTOWN d/06 sept r/Developer s/4999 pr/{login} u/amy pa/password12345`
+    * CLI
+      shows: `Here are the updated employee details: AMY 87654321 amy@u.nus.edu NUS UTOWN 06 sept Developer 6999 amy password123`
+* Acceptable parameters
     * Inputs are the same as adding an employee but you just change the particular details that you want to modify.
     * Names can only consist of capital and small letters, spaces and hyphens.
     * Contact number has to 8 digits without spaces
@@ -153,9 +168,11 @@ CodeContact is a **desktop app for handling and synchronising project informatio
     * Role should be: HR, manager or developer
     * Salary has to be at least 4 digits
     * Project should be valid project name already listed in the company, multiple projects have to be comma separated
-    * Password is at least 8 characters long, with a combination of uppercase letters, lowercase letters, numbers, and symbols
+    * Password is at least 8 characters long, with a combination of uppercase letters, lowercase letters, numbers, and
+      symbols
 * When command succeeds
     * CLI shows:
+
 ```
 Here are the updated employee details:
 Name: AMY
@@ -169,6 +186,7 @@ Assigned Projects:login
 Username: amy
 Password: Password123!
 ```
+
 * When command fails
     * Repetitive name
         * `More than 1 developer with the NAME has been found, please input employee’s phone number:`
@@ -184,8 +202,10 @@ Password: Password123!
 * Relevant UI mock-ups
 
 ### Search according to type and industry details: `search`
+
 * What it does
-    * Every user can search for contacts related to the keyword (eg. by search prj name, members of the prj team will appear)
+    * Every user can search for contacts related to the keyword (eg. by search prj name, members of the prj team will
+      appear)
 * Format
     * `Search p/<Project Name>`
     * `Search r/<Role>`
@@ -197,15 +217,18 @@ Password: Password123!
 * Acceptable Parameters
     * Incomplete inputs for string searches work too
     * Anything beyond p/ and r/ and n/does not work
-    * Name must be closely following  / for more accurate output (eg. n/Amy vs n/ Amy)
+    * Name must be closely following / for more accurate output (eg. n/Amy vs n/ Amy)
 * When command succeeds
     * `These are the project members for the project <Project Name>` followed by list of project members
     * `These are all the Senior Developers in this company` followed by list of senior developers
-    * `This is Amy’s contact` / `These are the contact details for Amy` followed by Amy’s details or list of all the Amy’s contact
+    * `This is Amy’s contact` / `These are the contact details for Amy` followed by Amy’s details or list of all the
+      Amy’s contact
       `No relevant contact details can be found`
 * When command fails
-    * Missing header<br> `Please search with the correct input Search p/<Project Name> OR Search r/<Role> OR Search n/<Name>`
-    * Invalid input<br> `x/ is not a valid type to search, Please search with the correct input Search p/<Project Name> OR Search r/<Role> OR Search n/<Name>`
+    * Missing
+      header<br> `Please search with the correct input Search p/<Project Name> OR Search r/<Role> OR Search n/<Name>`
+    * Invalid
+      input<br> `x/ is not a valid type to search, Please search with the correct input Search p/<Project Name> OR Search r/<Role> OR Search n/<Name>`
 
 * Relevant UI mock-ups
 
@@ -218,6 +241,7 @@ Format: `list TYPE`
 * lists the specific type of thing you are asking
 
 Examples:
+
 * `list developers` lists all the developers
 * `list projects` lists all the projects
 
@@ -232,6 +256,7 @@ Format: `delete INDEX`
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
+
 * `list` followed by `delete 2` deletes the 2nd developer in the address book.
 * `find Betsy` followed by `delete 1` deletes the 1st developer in the results of the `find` command.
 
@@ -260,23 +285,26 @@ Format: `exit`
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous AddressBook home folder.
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains
+the data of your previous AddressBook home folder.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Known issues
 
-1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only
+   the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the
+   application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command summary
 
-Action | Format, Examples
---------|------------------
-**add**|Format: <br> <br> Example: <br><br>
-**edit** |Format: <br> <br> Example: <br><br>
-**search** |Format: <br> <br> Example: <br><br>
-**delete** |Format: <br> <br> Example: <br><br>
-**list** |Format: <br> `list developers` <br>  `list projects` <br> `list clients`
-**help** | `help`
+ Action     | Format, Examples                                                         
+------------|--------------------------------------------------------------------------
+ **add**    | Format: <br> <br> Example: <br><br>                                      
+ **edit**   | Format: <br> <br> Example: <br><br>                                      
+ **search** | Format: <br> <br> Example: <br><br>                                      
+ **delete** | Format: <br> <br> Example: <br><br>                                      
+ **list**   | Format: <br> `list developers` <br>  `list projects` <br> `list clients` 
+ **help**   | `help`                                                                   
