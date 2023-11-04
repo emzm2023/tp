@@ -28,14 +28,7 @@ public class Client extends Person {
     private final Name organisation;
     private final Document document;
     private final ClientRoles role;
-
-<<<<<<<HEAD
-    public static final Prefix[] unusedPrefixes = new Prefix[]{PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING,
-            PREFIX_GITHUBID, PREFIX_DESCRIPTION, PREFIX_DEADLINE};
-
-=======
-        >>>>>>>master
-
+    
     /**
      * Every field must be present and not null.
      */
