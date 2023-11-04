@@ -42,13 +42,15 @@ public class FindDeadlineCommandParser implements Parser<FindDeadlineCommand> {
         if (argMultimap.getValue(PREFIX_DATEJOINED).isPresent()) {
             String dateKeywords = argMultimap.getValue(PREFIX_DATEJOINED).get();
             Date input = new Date(dateKeywords);
-            finalPredicate = finalPredicate.and(d -> !d.getDate().value.after(input.value)); // Replace with your DateJoinedPredicate
+            finalPredicate = finalPredicate.and(d -> !d.getDate().value.after(input.value)); // Replace with your 
+            // DateJoinedPredicate
         }
 
         if (argMultimap.getValue(PREFIX_PRIORITY).isPresent()) {
             String priorityKeywords = argMultimap.getValue(PREFIX_PRIORITY).get();
             Priority input = Priority.valueOf(priorityKeywords);
-            finalPredicate = finalPredicate.and(d -> d.getPriority().equals(input)); // Replace with your PriorityPredicate
+            finalPredicate = finalPredicate.and(d -> d.getPriority().equals(input)); // Replace with your 
+            // PriorityPredicate
         }
 
         return finalPredicate;

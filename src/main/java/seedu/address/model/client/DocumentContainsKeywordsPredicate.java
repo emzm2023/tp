@@ -33,7 +33,8 @@ public class DocumentContainsKeywordsPredicate implements KeywordPredicate<Clien
             return false;
         }
 
-        DocumentContainsKeywordsPredicate otherDocumentContainsKeywordsPredicate = (DocumentContainsKeywordsPredicate) other;
+        DocumentContainsKeywordsPredicate otherDocumentContainsKeywordsPredicate =
+                (DocumentContainsKeywordsPredicate) other;
         return keywords.equals(otherDocumentContainsKeywordsPredicate.keywords);
     }
 

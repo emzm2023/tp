@@ -34,7 +34,8 @@ public class GithubIdContainsKeywordsPredicate implements KeywordPredicate<Devel
             return false;
         }
 
-        GithubIdContainsKeywordsPredicate otherGithubIdContainsKeywordsPredicate = (GithubIdContainsKeywordsPredicate) other;
+        GithubIdContainsKeywordsPredicate otherGithubIdContainsKeywordsPredicate =
+                (GithubIdContainsKeywordsPredicate) other;
         return keywords.equals(otherGithubIdContainsKeywordsPredicate.keywords);
     }
 

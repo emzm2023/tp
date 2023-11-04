@@ -73,7 +73,8 @@ public class EditDeveloperCommandParser implements Parser<EditDeveloperCommand> 
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS,
                 PREFIX_DATEJOINED, PREFIX_ROLE, PREFIX_SALARY, PREFIX_GITHUBID, PREFIX_RATING);
 
-        EditDeveloperCommand.EditDeveloperDescriptor editDeveloperDescriptor = new EditDeveloperCommand.EditDeveloperDescriptor();
+        EditDeveloperCommand.EditDeveloperDescriptor editDeveloperDescriptor =
+                new EditDeveloperCommand.EditDeveloperDescriptor();
 
         if (argMultimap.getValue(PREFIX_NAME).isPresent()) {
             editDeveloperDescriptor.setName(ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get()));
@@ -122,7 +123,8 @@ public class EditDeveloperCommandParser implements Parser<EditDeveloperCommand> 
         if (projects.isEmpty()) {
             return Optional.empty();
         }
-        Collection<String> projectSet = projects.size() == 1 && projects.contains("") ? Collections.emptySet() : projects;
+        Collection<String> projectSet = projects.size() == 1 && projects.contains("") ? Collections.emptySet() :
+                projects;
         return Optional.of(ParserUtil.parseProjectsToSet(projectSet));
     }
 }

@@ -47,7 +47,8 @@ public class EditDeveloperCommand extends Command {
     public static final String COMMAND_WORD = "edit-developer";
     public static final String MESSAGE_EDIT_DEVELOPER_SUCCESS = "Edited Developer: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_DEVELOPER = "The details of the developer in the address book are already as given.";
+    public static final String MESSAGE_DUPLICATE_DEVELOPER = "The details of the developer in the address book are " +
+            "already as given.";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the developer identified "
             + "by the index number used in the displayed developer list. "

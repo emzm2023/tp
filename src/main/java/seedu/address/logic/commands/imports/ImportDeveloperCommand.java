@@ -23,7 +23,8 @@ public class ImportDeveloperCommand extends Command {
             + "Column titles should follow this format strictly:\n"
             + "Name, Contact Number, Email, Address, Date Joined, Role, Salary, GithubId, Rating, Projects";
     public static final String MESSAGE_SUCCESS = "New developer added: %1$s";
-    public static final String MESSAGE_DUPLICATE_DEVELOPER = " is a developer that already exists in the address book\n";
+    public static final String MESSAGE_DUPLICATE_DEVELOPER = " is a developer that already exists in the address " +
+            "book\n";
 
     private final ArrayList<Developer> toAddList;
 

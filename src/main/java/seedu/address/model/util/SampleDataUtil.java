@@ -40,13 +40,16 @@ public class SampleDataUtil {
                         new Address("Blk 30 Geylang Street 29, #06-40"), new DeveloperRoles("Developer"), projectSet1,
                         new Salary("5000"), new Date("15-12-2019"), new GithubId("mahidharah"), new Rating("5.0")),
                 new Developer(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@example.com"),
-                        new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"), new DeveloperRoles("Developer"), projectSet2,
+                        new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"), new DeveloperRoles("Developer"),
+                        projectSet2,
                         new Salary("6000"), new Date("16-11-2020"), new GithubId("mahidharah1"), new Rating("5.0")),
                 new Developer(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Email("charlotte@example.com"),
-                        new Address("Blk 11 Ang Mo Kio Street 74, #11-04"), new DeveloperRoles("Developer"), projectSet3,
+                        new Address("Blk 11 Ang Mo Kio Street 74, #11-04"), new DeveloperRoles("Developer"),
+                        projectSet3,
                         new Salary("4500"), new Date("20-10-2020"), new GithubId("mahidharah2"), new Rating("5.0")),
                 new Developer(new Name("David Li"), new Phone("91031282"), new Email("lidavid@example.com"),
-                        new Address("Blk 436 Serangoon Gardens Street 26, #16-43"), new DeveloperRoles("Developer"), projectSet4,
+                        new Address("Blk 436 Serangoon Gardens Street 26, #16-43"), new DeveloperRoles("Developer"),
+                        projectSet4,
                         new Salary("5500"), new Date("23-09-2021"), new GithubId("mahidharah3"), new Rating("5.0"))
         };
     }
@@ -75,10 +78,14 @@ public class SampleDataUtil {
 
     public static Project[] getSampleProjects() {
         return new Project[]{
-                new Project(new Name("CodeContact"), new Description("A contact management system"), getDeadlineList("13-10-2021,Phase 1,HIGH,0")),
-                new Project(new Name("TeamTrekker"), new Description("A team collaboration tool"), getDeadlineList("13-11-2021,Phase 2,MEDIUM,0")),
-                new Project(new Name("Orbital"), new Description("A satellite tracking system"), getDeadlineList("13-12-2021,Phase 3,LOW,0")),
-                new Project(new Name("Appollo"), new Description("A mobile app development platform"), getDeadlineList("13-01-2022,Launch,HIGH,0"))
+                new Project(new Name("CodeContact"), new Description("A contact management system"), getDeadlineList(
+                        "13-10-2021,Phase 1,HIGH,0")),
+                new Project(new Name("TeamTrekker"), new Description("A team collaboration tool"), getDeadlineList(
+                        "13-11-2021,Phase 2,MEDIUM,0")),
+                new Project(new Name("Orbital"), new Description("A satellite tracking system"), getDeadlineList("13" +
+                        "-12-2021,Phase 3,LOW,0")),
+                new Project(new Name("Appollo"), new Description("A mobile app development platform"),
+                        getDeadlineList("13-01-2022,Launch,HIGH,0"))
         };
     }
 

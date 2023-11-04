@@ -10,7 +10,8 @@ public class Document {
 
     // Regular expression to match a valid URL
     public static final String VALIDATION_REGEX =
-            "(https:\\/\\/www\\.|http:\\/\\/www\\.|https:\\/\\/|http:\\/\\/)?[a-zA-Z0-9\\/]{2,}(\\.[a-zA-Z0-9\\/]{2,})(\\.[a-zA-Z0-9\\/]{2,})?";
+            "(https:\\/\\/www\\.|http:\\/\\/www\\.|https:\\/\\/|http:\\/\\/)?[a-zA-Z0-9\\/]{2,}(\\.[a-zA-Z0-9\\/]{2," +
+                    "})(\\.[a-zA-Z0-9\\/]{2,})?";
 
     private final String url;
 

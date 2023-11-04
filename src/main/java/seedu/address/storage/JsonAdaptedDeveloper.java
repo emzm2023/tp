@@ -123,7 +123,8 @@ class JsonAdaptedDeveloper {
 
 
         if (role == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, DeveloperRoles.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    DeveloperRoles.class.getSimpleName()));
         }
         if (!DeveloperRoles.isValidRole(role)) {
             throw new IllegalValueException(DeveloperRoles.NO_SUCH_DEVELOPER_ROLE);
@@ -138,7 +139,8 @@ class JsonAdaptedDeveloper {
         }
         final Salary modelSalary = new Salary(salary);
         if (githubId == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, GithubId.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    GithubId.class.getSimpleName()));
         }
         if (!GithubId.isValidGithubId(githubId)) {
             throw new IllegalValueException(GithubId.MESSAGE_CONSTRAINTS);
@@ -152,7 +154,8 @@ class JsonAdaptedDeveloper {
         }
         final Rating modelRating = new Rating(rating);
         final Set<String> modelProjects = new HashSet<>(personProjects);
-        return new Developer(modelName, modelPhone, modelEmail, modelAddress, modelRole, modelProjects, modelSalary, modelDateJoined, modelGithubId, modelRating);
+        return new Developer(modelName, modelPhone, modelEmail, modelAddress, modelRole, modelProjects, modelSalary,
+                modelDateJoined, modelGithubId, modelRating);
     }
 
 }

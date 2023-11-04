@@ -40,7 +40,8 @@ public class FindDeveloperCommandParser implements Parser<FindDeveloperCommand> 
         }
 
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_ROLE, PREFIX_ADDRESS,
-                PREFIX_EMAIL, PREFIX_GITHUBID, PREFIX_DATEJOINED, PREFIX_PROJECT, PREFIX_PHONE, PREFIX_SALARY, PREFIX_RATING);
+                PREFIX_EMAIL, PREFIX_GITHUBID, PREFIX_DATEJOINED, PREFIX_PROJECT, PREFIX_PHONE, PREFIX_SALARY,
+                PREFIX_RATING);
 
         if (!argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindDeveloperCommand.MESSAGE_USAGE));
@@ -56,37 +57,44 @@ public class FindDeveloperCommandParser implements Parser<FindDeveloperCommand> 
 
         if (argMultimap.getValue(PREFIX_NAME).isPresent()) {
             String[] nameKeywords = argMultimap.getValue(PREFIX_NAME).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new NameDeveloperContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new NameDeveloperContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_ROLE).isPresent()) {
             String[] roleKeywords = argMultimap.getValue(PREFIX_ROLE).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new RoleDeveloperContainsKeywordsPredicate(Arrays.asList(roleKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new RoleDeveloperContainsKeywordsPredicate(Arrays.asList(roleKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_ADDRESS).isPresent()) {
             String[] addressKeywords = argMultimap.getValue(PREFIX_ADDRESS).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new AddressDeveloperContainsKeywordsPredicate(Arrays.asList(addressKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new AddressDeveloperContainsKeywordsPredicate(Arrays.asList(addressKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_DATEJOINED).isPresent()) {
             String[] dateJoinedKeywords = argMultimap.getValue(PREFIX_DATEJOINED).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new DateJoinedContainsKeywordsPredicate(Arrays.asList(dateJoinedKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new DateJoinedContainsKeywordsPredicate(Arrays.asList(dateJoinedKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_EMAIL).isPresent()) {
             String[] emailKeywords = argMultimap.getValue(PREFIX_EMAIL).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new EmailDeveloperContainsKeywordsPredicate(Arrays.asList(emailKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new EmailDeveloperContainsKeywordsPredicate(Arrays.asList(emailKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_PHONE).isPresent()) {
             String[] phoneKeywords = argMultimap.getValue(PREFIX_PHONE).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new PhoneDeveloperContainsKeywordsPredicate(Arrays.asList(phoneKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new PhoneDeveloperContainsKeywordsPredicate(Arrays.asList(phoneKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_PROJECT).isPresent()) {
             String[] projectKeywords = argMultimap.getValue(PREFIX_PROJECT).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new ProjectDeveloperContainsKeywordsPredicate(Arrays.asList(projectKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new ProjectDeveloperContainsKeywordsPredicate(Arrays.asList(projectKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_SALARY).isPresent()) {

@@ -73,7 +73,8 @@ public class FindClientCommandParser implements Parser<FindClientCommand> {
 
         if (argMultimap.getValue(PREFIX_ADDRESS).isPresent()) {
             String[] addressKeywords = argMultimap.getValue(PREFIX_ADDRESS).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new AddressClientContainsKeywordsPredicate(Arrays.asList(addressKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new AddressClientContainsKeywordsPredicate(Arrays.asList(addressKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_EMAIL).isPresent()) {
@@ -88,7 +89,8 @@ public class FindClientCommandParser implements Parser<FindClientCommand> {
 
         if (argMultimap.getValue(PREFIX_PROJECT).isPresent()) {
             String[] projectKeywords = argMultimap.getValue(PREFIX_PROJECT).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new ProjectClientContainsKeywordsPredicate(Arrays.asList(projectKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new ProjectClientContainsKeywordsPredicate(Arrays.asList(projectKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_DOCUMENT).isPresent()) {
@@ -98,7 +100,8 @@ public class FindClientCommandParser implements Parser<FindClientCommand> {
 
         if (argMultimap.getValue(PREFIX_ORGANISATION).isPresent()) {
             String[] organisationKeywords = argMultimap.getValue(PREFIX_ORGANISATION).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new OrganisationContainsKeywordsPredicate(Arrays.asList(organisationKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new OrganisationContainsKeywordsPredicate(Arrays.asList(organisationKeywords)));
         }
         return finalPredicate;
     }

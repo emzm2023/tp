@@ -42,7 +42,8 @@ public class EditClientCommand extends Command {
     public static final String COMMAND_WORD = "edit-client";
     public static final String MESSAGE_EDIT_CLIENT_SUCCESS = "Edited Client: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_CLIENT = "The details of the client in the address book are already as given.";
+    public static final String MESSAGE_DUPLICATE_CLIENT = "The details of the client in the address book are already " +
+            "as given.";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the client identified "
             + "by the index number used in the displayed client list. "

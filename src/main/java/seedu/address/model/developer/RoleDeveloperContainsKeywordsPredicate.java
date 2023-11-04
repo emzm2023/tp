@@ -34,7 +34,8 @@ public class RoleDeveloperContainsKeywordsPredicate implements KeywordPredicate<
             return false;
         }
 
-        RoleDeveloperContainsKeywordsPredicate otherRoleContainsKeywordsPredicate = (RoleDeveloperContainsKeywordsPredicate) other;
+        RoleDeveloperContainsKeywordsPredicate otherRoleContainsKeywordsPredicate =
+                (RoleDeveloperContainsKeywordsPredicate) other;
         return keywords.equals(otherRoleContainsKeywordsPredicate.keywords);
     }
 

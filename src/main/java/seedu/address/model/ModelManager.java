@@ -206,7 +206,8 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void setProject(seedu.address.model.project.Project target, seedu.address.model.project.Project editedProject) {
+    public void setProject(seedu.address.model.project.Project target,
+                           seedu.address.model.project.Project editedProject) {
         requireAllNonNull(target, editedProject);
 
         addressBook.setProject(target, editedProject);

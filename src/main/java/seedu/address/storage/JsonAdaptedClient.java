@@ -34,7 +34,8 @@ public class JsonAdaptedClient {
     public JsonAdaptedClient(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
                              @JsonProperty("email") String email, @JsonProperty("address") String address,
                              @JsonProperty("role") String role, @JsonProperty("projects") List<String> projects,
-                             @JsonProperty("organisation") String organisation, @JsonProperty("document") String document) {
+                             @JsonProperty("organisation") String organisation,
+                             @JsonProperty("document") String document) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -95,7 +96,8 @@ public class JsonAdaptedClient {
         final Address modelAddress = new Address(address);
 
         if (role == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, ClientRoles.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    ClientRoles.class.getSimpleName()));
         }
         if (!ClientRoles.isValidRole(role)) {
             throw new IllegalValueException(ClientRoles.NO_SUCH_CLIENT_ROLE);
@@ -111,7 +113,8 @@ public class JsonAdaptedClient {
         final Name modelOrganisation = new Name(organisation);
 
         if (document == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Document.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Document.class.getSimpleName()));
         }
         if (!Document.isValidUrl(document)) {
             throw new IllegalValueException(Document.MESSAGE_CONSTRAINTS);

@@ -37,7 +37,8 @@ public class ImportClientCommandParser implements Parser<ImportClientCommand> {
             // Check if the CSV file contains valid column names
             boolean isValid = checkColumnNames(br.readLine());
             if (!isValid) {
-                throw new ParseException(String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, ImportClientCommand.MESSAGE_USAGE));
+                throw new ParseException(String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT,
+                        ImportClientCommand.MESSAGE_USAGE));
             }
 
             ArrayList<Client> toAddList = new ArrayList<>();

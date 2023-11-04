@@ -34,7 +34,8 @@ public class NameDeveloperContainsKeywordsPredicate implements KeywordPredicate<
             return false;
         }
 
-        NameDeveloperContainsKeywordsPredicate otherNameContainsKeywordsPredicate = (NameDeveloperContainsKeywordsPredicate) other;
+        NameDeveloperContainsKeywordsPredicate otherNameContainsKeywordsPredicate =
+                (NameDeveloperContainsKeywordsPredicate) other;
         return keywords.equals(otherNameContainsKeywordsPredicate.keywords);
     }
 

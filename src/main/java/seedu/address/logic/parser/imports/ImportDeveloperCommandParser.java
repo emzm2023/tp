@@ -40,7 +40,8 @@ public class ImportDeveloperCommandParser implements Parser<ImportDeveloperComma
             String splitBy = ",";
             boolean isValid = checkColumnNames(br.readLine());
             if (!isValid) {
-                throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ImportDeveloperCommand.MESSAGE_USAGE));
+                throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                        ImportDeveloperCommand.MESSAGE_USAGE));
             }
             ArrayList<Developer> toAddList = new ArrayList<>();
             while ((line = br.readLine()) != null)   //returns a Boolean value
@@ -61,7 +62,8 @@ public class ImportDeveloperCommandParser implements Parser<ImportDeveloperComma
                 }
                 Set<String> projectList = ParserUtil.parseProjectsToSet(projects);
 
-                Developer developer = new Developer(name, phone, email, address, role, projectList, salary, dateJoined, githubId, rating);
+                Developer developer = new Developer(name, phone, email, address, role, projectList, salary,
+                        dateJoined, githubId, rating);
                 toAddList.add(developer);
 
             }

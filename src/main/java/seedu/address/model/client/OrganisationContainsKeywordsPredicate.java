@@ -33,7 +33,8 @@ public class OrganisationContainsKeywordsPredicate implements KeywordPredicate<C
             return false;
         }
 
-        OrganisationContainsKeywordsPredicate otherOrganisationContainsKeywordsPredicate = (OrganisationContainsKeywordsPredicate) other;
+        OrganisationContainsKeywordsPredicate otherOrganisationContainsKeywordsPredicate =
+                (OrganisationContainsKeywordsPredicate) other;
         return keywords.equals(otherOrganisationContainsKeywordsPredicate.keywords);
     }
 

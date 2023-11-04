@@ -30,7 +30,8 @@ public class FindProjectCommandParser implements Parser<FindProjectCommand> {
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindProjectCommand.MESSAGE_USAGE));
         }
 
-        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_DEADLINE, PREFIX_DESCRIPTION, PREFIX_PROJECT);
+        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_DEADLINE, PREFIX_DESCRIPTION,
+                PREFIX_PROJECT);
 
         if (!argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(
@@ -47,12 +48,14 @@ public class FindProjectCommandParser implements Parser<FindProjectCommand> {
 
         if (argMultimap.getValue(PREFIX_PROJECT).isPresent()) {
             String[] projectNameKeywords = argMultimap.getValue(PREFIX_PROJECT).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new ProjectNameContainsKeywordsPredicate(Arrays.asList(projectNameKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new ProjectNameContainsKeywordsPredicate(Arrays.asList(projectNameKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_DESCRIPTION).isPresent()) {
             String[] descriptionKeywords = argMultimap.getValue(PREFIX_DESCRIPTION).get().split("\\s+");
-            finalPredicate = finalPredicate.and(new DescriptionContainsKeywordsPredicate(Arrays.asList(descriptionKeywords)));
+            finalPredicate =
+                    finalPredicate.and(new DescriptionContainsKeywordsPredicate(Arrays.asList(descriptionKeywords)));
         }
 
         if (argMultimap.getValue(PREFIX_DEADLINE).isPresent()) {

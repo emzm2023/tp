@@ -33,7 +33,8 @@ public class DateJoinedContainsKeywordsPredicate implements KeywordPredicate<Dev
             return false;
         }
 
-        DateJoinedContainsKeywordsPredicate otherDateJoinedContainsKeywordsPredicate = (DateJoinedContainsKeywordsPredicate) other;
+        DateJoinedContainsKeywordsPredicate otherDateJoinedContainsKeywordsPredicate =
+                (DateJoinedContainsKeywordsPredicate) other;
         return keywords.equals(otherDateJoinedContainsKeywordsPredicate.keywords);
     }
 

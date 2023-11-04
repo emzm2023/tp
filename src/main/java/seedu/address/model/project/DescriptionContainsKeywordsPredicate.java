@@ -19,7 +19,8 @@ public class DescriptionContainsKeywordsPredicate implements KeywordPredicate<Pr
     @Override
     public boolean test(Project project) {
         return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(project.getProjectDescription().toString(), keyword));
+                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(project.getProjectDescription().toString(),
+                        keyword));
     }
 
     @Override
@@ -33,7 +34,8 @@ public class DescriptionContainsKeywordsPredicate implements KeywordPredicate<Pr
             return false;
         }
 
-        DescriptionContainsKeywordsPredicate otherNameContainsKeywordsPredicate = (DescriptionContainsKeywordsPredicate) other;
+        DescriptionContainsKeywordsPredicate otherNameContainsKeywordsPredicate =
+                (DescriptionContainsKeywordsPredicate) other;
         return keywords.equals(otherNameContainsKeywordsPredicate.keywords);
     }
 

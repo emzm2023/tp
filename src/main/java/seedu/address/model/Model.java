@@ -77,7 +77,8 @@ public interface Model {
     boolean hasProject(seedu.address.model.project.Project project);
 
     /**
-     * Returns null if the projects assigned to a person exist and are valid, returns the invalid project name otherwise.
+     * Returns null if the projects assigned to a person exist and are valid, returns the invalid project name 
+     * otherwise.
      *
      * @param person The person to check.
      * @returns The String of the invalid project name, or null if all projects are valid.

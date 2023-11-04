@@ -33,7 +33,8 @@ public class NameClientContainsKeywordsPredicate implements KeywordPredicate<Cli
             return false;
         }
 
-        seedu.address.model.client.NameClientContainsKeywordsPredicate otherNameContainsKeywordsPredicate = (seedu.address.model.client.NameClientContainsKeywordsPredicate) other;
+        seedu.address.model.client.NameClientContainsKeywordsPredicate otherNameContainsKeywordsPredicate =
+                (seedu.address.model.client.NameClientContainsKeywordsPredicate) other;
         return keywords.equals(otherNameContainsKeywordsPredicate.keywords);
     }
 

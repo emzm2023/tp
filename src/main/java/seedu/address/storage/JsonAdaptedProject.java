@@ -27,7 +27,8 @@ class JsonAdaptedProject {
      * Constructs a {@code JsonAdaptedProject} with the given {@code projectName}.
      */
     @JsonCreator
-    public JsonAdaptedProject(@JsonProperty("projectName") String projectName, @JsonProperty("description") String description,
+    public JsonAdaptedProject(@JsonProperty("projectName") String projectName,
+                              @JsonProperty("description") String description,
                               @JsonProperty("deadlines") List<String> deadlines) {
 
         this.projectName = projectName;
@@ -65,7 +66,8 @@ class JsonAdaptedProject {
         final Name modelName = new Name(projectName);
 
         if (description == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Description.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Description.class.getSimpleName()));
         }
         if (!Description.isValidDescription(description)) {
             throw new IllegalValueException(Description.MESSAGE_CONSTRAINTS);
@@ -73,7 +75,8 @@ class JsonAdaptedProject {
         final Description modelDescription = new Description(description);
 
         if (deadlines == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Deadline.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Deadline.class.getSimpleName()));
         }
 
         // Parse and validate the set of deadlines

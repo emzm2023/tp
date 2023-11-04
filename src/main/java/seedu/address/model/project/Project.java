@@ -126,7 +126,8 @@ public class Project {
 
     /**
      * Returns a list with each element being the String representation of the respective deadline.
-     * The element at the given index is the String representation of the respective deadline such that it is incomplete.
+     * The element at the given index is the String representation of the respective deadline such that it is 
+     * incomplete.
      *
      * @param index The index of the deadline to mark as incomplete.
      * @return A list containing String representations of deadlines.
