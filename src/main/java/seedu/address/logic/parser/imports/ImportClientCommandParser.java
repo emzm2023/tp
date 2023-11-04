@@ -1,15 +1,7 @@
 package seedu.address.logic.parser.imports;
-import seedu.address.logic.commands.imports.ImportClientCommand;
-import seedu.address.logic.parser.Parser;
-import seedu.address.logic.parser.ParserUtil;
-import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.client.Client;
-import seedu.address.model.client.Document;
-import seedu.address.model.commons.Name;
-import seedu.address.model.person.Address;
-import seedu.address.model.client.ClientRoles;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Phone;
+
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_FILE;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -19,8 +11,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
 
-import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.Messages.MESSAGE_INVALID_FILE;
+import seedu.address.logic.commands.imports.ImportClientCommand;
+import seedu.address.logic.parser.Parser;
+import seedu.address.logic.parser.ParserUtil;
+import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.client.Client;
+import seedu.address.model.client.ClientRoles;
+import seedu.address.model.client.Document;
+import seedu.address.model.commons.Name;
+import seedu.address.model.person.Address;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Phone;
 
 public class ImportClientCommandParser implements Parser<ImportClientCommand> {
 

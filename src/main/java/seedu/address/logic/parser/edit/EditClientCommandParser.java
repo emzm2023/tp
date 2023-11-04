@@ -62,7 +62,7 @@ public class EditClientCommandParser implements Parser<EditClientCommand> {
         if (!argMultimap.hasMappings()) {
             throw new ParseException(EditClientCommand.MESSAGE_NOT_EDITED);
         }
-        
+
         for (Prefix p : Client.unusedPrefixes) {
             if (argMultimap.getValue(p).isPresent()) {
                 throw new ParseException(String.format(Messages.MESSAGE_INAPPLICABLE_PREFIX_USED,

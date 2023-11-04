@@ -1,4 +1,5 @@
 package seedu.address.logic.commands.deleteRoles;
+
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ROLE;
 
@@ -10,10 +11,9 @@ import seedu.address.logic.commands.TabIndex;
 import seedu.address.logic.commands.delete.DeleteClientCommand;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.client.ClientRoles;
 import seedu.address.model.developer.DeveloperRoles;
 
-public class DeleteDeveloperRoleCommand extends Command{
+public class DeleteDeveloperRoleCommand extends Command {
     public static final String COMMAND_WORD = "delete-developer-role";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Delete a role for developers in the address book. "
@@ -36,6 +36,7 @@ public class DeleteDeveloperRoleCommand extends Command{
         requireNonNull(role);
         toAdd = role;
     }
+
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
@@ -47,7 +48,7 @@ public class DeleteDeveloperRoleCommand extends Command{
                 throw new CommandException(MESSAGE_CANNOT_DELETE_PREXISTS);
             } else if (DeveloperRoles.isNotInList()) {
                 throw new CommandException(MESSAGE_CANNOT_DELETE_NONEXISTING + MESSAGE_EXISTING_DEVELOPERS_ROLES
-                + DeveloperRoles.printRoles());
+                        + DeveloperRoles.printRoles());
             }
         }
 

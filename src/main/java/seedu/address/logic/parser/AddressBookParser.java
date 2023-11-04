@@ -18,6 +18,9 @@ import seedu.address.logic.commands.LockCommand;
 import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.UndoCommand;
 import seedu.address.logic.commands.UnlockCommand;
+import seedu.address.logic.commands.add.AddClientCommand;
+import seedu.address.logic.commands.add.AddDeveloperCommand;
+import seedu.address.logic.commands.add.AddProjectCommand;
 import seedu.address.logic.commands.addRoles.AddClientRoleCommand;
 import seedu.address.logic.commands.addRoles.AddDeveloperRoleCommand;
 import seedu.address.logic.commands.delete.DeleteClientCommand;
@@ -25,28 +28,25 @@ import seedu.address.logic.commands.delete.DeleteDeveloperCommand;
 import seedu.address.logic.commands.delete.DeleteProjectCommand;
 import seedu.address.logic.commands.deleteRoles.DeleteClientRoleCommand;
 import seedu.address.logic.commands.deleteRoles.DeleteDeveloperRoleCommand;
-import seedu.address.logic.commands.find.FindClientCommand;
-import seedu.address.logic.commands.find.FindDeveloperCommand;
-import seedu.address.logic.commands.find.FindProjectCommand;
-import seedu.address.logic.commands.find.FindDeadlineCommand;
-import seedu.address.logic.commands.list.ListClientCommand;
-import seedu.address.logic.commands.list.ListDeveloperCommand;
-import seedu.address.logic.commands.list.ListProjectCommand;
-import seedu.address.logic.commands.add.AddClientCommand;
-import seedu.address.logic.commands.add.AddDeveloperCommand;
-import seedu.address.logic.commands.add.AddProjectCommand;
 import seedu.address.logic.commands.edit.EditClientCommand;
 import seedu.address.logic.commands.edit.EditDeveloperCommand;
 import seedu.address.logic.commands.edit.EditProjectCommand;
-import seedu.address.logic.commands.imports.ImportDeveloperCommand;
+import seedu.address.logic.commands.find.FindClientCommand;
+import seedu.address.logic.commands.find.FindDeadlineCommand;
+import seedu.address.logic.commands.find.FindDeveloperCommand;
+import seedu.address.logic.commands.find.FindProjectCommand;
 import seedu.address.logic.commands.imports.ImportClientCommand;
+import seedu.address.logic.commands.imports.ImportDeveloperCommand;
+import seedu.address.logic.commands.list.ListClientCommand;
+import seedu.address.logic.commands.list.ListDeveloperCommand;
+import seedu.address.logic.commands.list.ListProjectCommand;
 import seedu.address.logic.commands.mark.MarkDeadlineCommand;
 import seedu.address.logic.commands.mark.UnmarkDeadlineCommand;
-import seedu.address.logic.parser.addRoles.AddClientRoleCommandParser;
-import seedu.address.logic.parser.addRoles.AddDeveloperRoleCommandParser;
 import seedu.address.logic.parser.add.AddClientCommandParser;
 import seedu.address.logic.parser.add.AddDeveloperCommandParser;
 import seedu.address.logic.parser.add.AddProjectCommandParser;
+import seedu.address.logic.parser.addRoles.AddClientRoleCommandParser;
+import seedu.address.logic.parser.addRoles.AddDeveloperRoleCommandParser;
 import seedu.address.logic.parser.delete.DeleteClientCommandParser;
 import seedu.address.logic.parser.delete.DeleteDeveloperCommandParser;
 import seedu.address.logic.parser.delete.DeleteProjectCommandParser;
@@ -56,12 +56,12 @@ import seedu.address.logic.parser.edit.EditClientCommandParser;
 import seedu.address.logic.parser.edit.EditDeveloperCommandParser;
 import seedu.address.logic.parser.edit.EditProjectCommandParser;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.logic.parser.imports.ImportClientCommandParser;
-import seedu.address.logic.parser.imports.ImportDeveloperCommandParser;
 import seedu.address.logic.parser.find.FindClientCommandParser;
+import seedu.address.logic.parser.find.FindDeadlineCommandParser;
 import seedu.address.logic.parser.find.FindDeveloperCommandParser;
 import seedu.address.logic.parser.find.FindProjectCommandParser;
-import seedu.address.logic.parser.find.FindDeadlineCommandParser;
+import seedu.address.logic.parser.imports.ImportClientCommandParser;
+import seedu.address.logic.parser.imports.ImportDeveloperCommandParser;
 import seedu.address.logic.parser.mark.MarkDeadlineCommandParser;
 import seedu.address.logic.parser.mark.UnmarkDeadlineCommandParser;
 
@@ -75,7 +75,7 @@ public class AddressBookParser {
      */
     private static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("(?<commandWord>\\S+)(?<arguments>.*)");
     private static final Logger logger = LogsCenter.getLogger(AddressBookParser.class);
-    private static boolean isLocked=true;
+    private static boolean isLocked = true;
 
     /**
      * Parses user input into command for execution.
@@ -134,7 +134,7 @@ public class AddressBookParser {
 
             case EditProjectCommand.COMMAND_WORD:
                 return new EditProjectCommandParser().parse(arguments);
-            
+
             case DeleteDeveloperCommand.COMMAND_WORD:
                 return new DeleteDeveloperCommandParser().parse(arguments);
 
@@ -142,7 +142,7 @@ public class AddressBookParser {
                 return new DeleteClientCommandParser().parse(arguments);
 
             case DeleteProjectCommand.COMMAND_WORD:
-            return new DeleteProjectCommandParser().parse(arguments);
+                return new DeleteProjectCommandParser().parse(arguments);
 
             case DeleteDeveloperRoleCommand.COMMAND_WORD:
                 return new DeleteDeveloperRoleCommandParser().parse(arguments);
@@ -188,7 +188,7 @@ public class AddressBookParser {
 
             case UnmarkDeadlineCommand.COMMAND_WORD:
                 return new UnmarkDeadlineCommandParser().parse(arguments);
-            
+
             case LockCommand.COMMAND_WORD:
                 return new LockCommand();
 
@@ -199,8 +199,7 @@ public class AddressBookParser {
                 logger.finer("This user input caused a ParseException: " + userInput);
                 throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
             }
-        }
-        else {
+        } else {
             switch (commandWord) {
             case UnlockCommand.COMMAND_WORD:
                 return new UnlockCommandParser().parse(arguments);
@@ -216,9 +215,11 @@ public class AddressBookParser {
             }
         }
     }
+
     public static void lock() {
         isLocked = true;
     }
+
     public static void unlock() {
         isLocked = false;
     }

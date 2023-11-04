@@ -8,6 +8,7 @@ import seedu.address.model.Model;
 public class UndoCommand extends Command {
     public static final String COMMAND_WORD = "undo";
     public static final String MESSAGE_SUCCESS = "Undo successful! The change below has been undone: ";
+
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);

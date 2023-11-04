@@ -2,7 +2,6 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Scene?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -11,70 +10,73 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
 <?import javafx.stage.Stage?>
+<fx:root minHeight="600" minWidth="450" onCloseRequest="#handleExit" title="CodeContact" type="javafx.stage.Stage"
+         xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <icons>
+        <Image url="@/images/logo.png"/>
+    </icons>
+    <scene>
+        <Scene>
 
-<fx:root minHeight="600" minWidth="450" onCloseRequest="#handleExit" title="CodeContact" type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
-  <icons>
-    <Image url="@/images/logo.png" />
-  </icons>
-  <scene>
-    <Scene>
+            <VBox>
+                <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
+                    <Menu mnemonicParsing="false" text="File">
+                        <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit"/>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Help">
+                        <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help"/>
+                    </Menu>
+                </MenuBar>
 
-      <VBox>
-        <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
-          <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
-          </Menu>
-        </MenuBar>
+                <StackPane fx:id="commandBoxPlaceholder" styleClass="pane-with-border" VBox.vgrow="NEVER">
+                    <padding>
+                        <Insets bottom="5" left="10" right="10" top="5"/>
+                    </padding>
+                </StackPane>
 
-        <StackPane fx:id="commandBoxPlaceholder" styleClass="pane-with-border" VBox.vgrow="NEVER">
-          <padding>
-            <Insets bottom="5" left="10" right="10" top="5" />
-          </padding>
-        </StackPane>
+                <StackPane fx:id="resultDisplayPlaceholder" maxHeight="100" minHeight="100" prefHeight="100"
+                           styleClass="pane-with-border" VBox.vgrow="NEVER">
+                    <padding>
+                        <Insets bottom="5" left="10" right="10" top="5"/>
+                    </padding>
+                </StackPane>
 
-                                <StackPane fx:id="resultDisplayPlaceholder" maxHeight="100" minHeight="100" prefHeight="100" styleClass="pane-with-border" VBox.vgrow="NEVER">
-          <padding>
-            <Insets bottom="5" left="10" right="10" top="5" />
-          </padding>
-        </StackPane>
+                <VBox fx:id="personList" minWidth="340" prefWidth="340" styleClass="pane-with-border"
+                      VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10"/>
+                    </padding>
+                    <children>
+                        <TabPane fx:id="tabPane" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                            <tabs>
+                                <Tab fx:id="developerTab" text="Developers">
+                                    <content>
+                                        <StackPane fx:id="developerListPanelPlaceholder"/>
+                                    </content>
+                                </Tab>
+                                <Tab fx:id="clientTab" text="Clients">
+                                    <content>
+                                        <StackPane fx:id="clientListPanelPlaceholder"/>
+                                    </content>
+                                </Tab>
+                                <Tab fx:id="projectTab" text="Projects">
+                                    <content>
+                                        <StackPane fx:id="projectListPanelPlaceholder"/>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </VBox>
 
-        <VBox fx:id="personList" minWidth="340" prefWidth="340" styleClass="pane-with-border" VBox.vgrow="ALWAYS">
-          <padding>
-            <Insets bottom="10" left="10" right="10" top="10" />
-          </padding>
-               <children>
-                  <TabPane fx:id="tabPane" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-                    <tabs>
-                      <Tab fx:id="developerTab" text="Developers">
-                           <content>
-                              <StackPane fx:id="developerListPanelPlaceholder" />
-                           </content>
-                        </Tab>
-                      <Tab fx:id="clientTab" text="Clients">
-                           <content>
-                              <StackPane fx:id="clientListPanelPlaceholder" />
-                           </content>
-                        </Tab>
-                        <Tab fx:id="projectTab" text="Projects">
-                           <content>
-                              <StackPane fx:id="projectListPanelPlaceholder" />
-                           </content>
-                        </Tab>
-                    </tabs>
-                  </TabPane>
-               </children>
-        </VBox>
-
-        <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
-      </VBox>
-         <stylesheets>
-            <URL value="@Extensions.css" />
-            <URL value="@LightTheme.css" />
-         </stylesheets>
-    </Scene>
-  </scene>
+                <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER"/>
+            </VBox>
+            <stylesheets>
+                <URL value="@Extensions.css"/>
+                <URL value="@LightTheme.css"/>
+            </stylesheets>
+        </Scene>
+    </scene>
 </fx:root>

@@ -2,8 +2,7 @@
 
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.VBox?>
-
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
-    <ListView fx:id="developerListView" VBox.vgrow="ALWAYS" />
+    <ListView fx:id="developerListView" VBox.vgrow="ALWAYS"/>
 </VBox>
 

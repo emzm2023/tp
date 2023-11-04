@@ -1,11 +1,9 @@
 package seedu.address.logic.commands;
 
-import seedu.address.logic.parser.AddressBookParser;
+import static java.util.Objects.requireNonNull;
+
 import seedu.address.model.Model;
 import seedu.address.model.Password;
-
-import static java.util.Objects.requireNonNull;
-import static seedu.address.model.Model.*;
 
 public class ChangePasswordCommand extends Command {
     public static final String COMMAND_WORD = "change-password";
@@ -24,7 +22,7 @@ public class ChangePasswordCommand extends Command {
     public CommandResult execute(Model model) {
         assert model != null : "Model cannot be null";
         requireNonNull(model);
-        String result = Password.changePassword(currentPw,newPw);
-        return new CommandResult(result,TabIndex.Developer);
+        String result = Password.changePassword(currentPw, newPw);
+        return new CommandResult(result, TabIndex.Developer);
     }
 }

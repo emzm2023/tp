@@ -51,18 +51,18 @@ public class ClientCard extends UiPart<Region> {
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
      */
-    public ClientCard (Client client, int displayedIndex) {
+    public ClientCard(Client client, int displayedIndex) {
         super(FXML);
         this.client = client;
         id.setText(displayedIndex + ". ");
         name.setText(client.getName().fullName);
-        phone.setText("Contact: "+client.getPhone().value);
-        email.setText("Email: "+client.getEmail().value);
-        role.setText("Role: "+client.getRole().role);
-        organisation.setText("Company: "+client.getOrganisation().fullName);
-        document.setText("Document: "+client.getDocument().toString());
+        phone.setText("Contact: " + client.getPhone().value);
+        email.setText("Email: " + client.getEmail().value);
+        role.setText("Role: " + client.getRole().role);
+        organisation.setText("Company: " + client.getOrganisation().fullName);
+        document.setText("Document: " + client.getDocument().toString());
 
-        address.setText("Address: "+client.getAddress().value);
+        address.setText("Address: " + client.getAddress().value);
         client.getProjects().stream()
                 .forEach(tag -> tags.getChildren().add(new Label(tag)));
     }

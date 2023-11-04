@@ -14,7 +14,9 @@ public interface ReadOnlyAddressBook {
      * This list will not contain any duplicate persons.
      */
     ObservableList<Developer> getDeveloperList();
+
     ObservableList<Client> getClientList();
+
     ObservableList<seedu.address.model.project.Project> getProjectList();
 
 

@@ -20,7 +20,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
@@ -60,11 +59,11 @@ public class EditProjectCommandParser implements Parser<EditProjectCommand> {
             throw new ParseException(String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT,
                     EditProjectCommand.MESSAGE_USAGE), pe);
         }
-        
+
         if (!argMultimap.hasMappings()) {
             throw new ParseException(EditProjectCommand.MESSAGE_NOT_EDITED);
         }
-        
+
         for (Prefix p : Project.unusedPrefixesForEdit) {
             if (argMultimap.getValue(p).isPresent()) {
                 throw new ParseException(String.format(Messages.MESSAGE_INAPPLICABLE_PREFIX_USED,

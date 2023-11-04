@@ -1,4 +1,5 @@
 package seedu.address.logic.commands.addRoles;
+
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ROLE;
 

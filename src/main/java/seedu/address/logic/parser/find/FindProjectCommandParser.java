@@ -11,14 +11,11 @@ import java.util.function.Predicate;
 import seedu.address.logic.commands.find.FindProjectCommand;
 import seedu.address.logic.parser.ArgumentMultimap;
 import seedu.address.logic.parser.ArgumentTokenizer;
-
 import seedu.address.logic.parser.Parser;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.project.DeadlineContainsKeywordsPredicate;
 import seedu.address.model.project.DescriptionContainsKeywordsPredicate;
-
 import seedu.address.model.project.Project;
-
 import seedu.address.model.project.ProjectNameContainsKeywordsPredicate;
 
 /**

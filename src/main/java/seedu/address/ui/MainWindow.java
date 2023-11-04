@@ -12,7 +12,6 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import org.controlsfx.control.Rating;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.Logic;
@@ -72,7 +71,6 @@ public class MainWindow extends UiPart<Stage> {
     private StackPane statusbarPlaceholder;
 
 
-
     /**
      * Creates a {@code MainWindow} with the given {@code Stage} and {@code Logic}.
      */
@@ -101,6 +99,7 @@ public class MainWindow extends UiPart<Stage> {
 
     /**
      * Sets the accelerator of a MenuItem.
+     *
      * @param keyCombination the KeyCombination value of the accelerator
      */
     private void setAccelerator(MenuItem menuItem, KeyCombination keyCombination) {
@@ -133,7 +132,7 @@ public class MainWindow extends UiPart<Stage> {
      * Fills up all the placeholders of this window.
      */
     void fillInnerParts() {
-        tabPane= new TabPane();
+        tabPane = new TabPane();
         // Create tabs
         /*developerTab = new Tab("Developer");
         clientTab = new Tab("Client");
@@ -213,9 +212,11 @@ public class MainWindow extends UiPart<Stage> {
     public DeveloperListPanel getDeveloperListPanel() {
         return developerListPanel;
     }
+
     public ClientListPanel getClientListPanel() {
         return clientListPanel;
     }
+
     public ProjectListPanel getProjectListPanel() {
         return projectListPanel;
     }

@@ -7,7 +7,6 @@ import java.util.stream.Stream;
 import seedu.address.logic.parser.Prefix;
 import seedu.address.model.client.Client;
 import seedu.address.model.developer.Developer;
-import seedu.address.model.developer.DeveloperRoles;
 
 /**
  * Container for user visible messages.
@@ -31,18 +30,21 @@ public class Messages {
                 ? "This is the 1 developer with matching information."
                 : String.format("These are the %d developers with matching information.", count);
     }
+
     public static String getMessageClientsListedOverview(int count) {
         return count == 1
                 ? "This is the 1 client with matching information."
                 : String.format("These are the %d clients with matching information.", count);
     }
+
     public static String getMessageProjectsListedOverview(int count) {
         return count == 1
                 ? "This is the 1 project with matching information."
                 : String.format("These are the %d projects with matching information.", count);
     }
+
     public static final String MESSAGE_DUPLICATE_FIELDS =
-                "Multiple values specified for the following single-valued field(s): ";
+            "Multiple values specified for the following single-valued field(s): ";
 
     /**
      * Returns an error message indicating the duplicate prefixes.

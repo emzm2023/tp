@@ -1,7 +1,16 @@
 package seedu.address.logic.commands.edit;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.*;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DATEJOINED;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_GITHUBID;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PROJECT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ROLE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_SALARY;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -26,7 +35,9 @@ import seedu.address.model.developer.DeveloperRoles;
 import seedu.address.model.developer.GithubId;
 import seedu.address.model.developer.Rating;
 import seedu.address.model.developer.Salary;
-import seedu.address.model.person.*;
+import seedu.address.model.person.Address;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Phone;
 
 /**
  * Edits the details of an existing developer in the address book.
@@ -55,14 +66,14 @@ public class EditDeveloperCommand extends Command {
             + "Example: \n" + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
             + PREFIX_EMAIL + "johndoe@example.com";
-    
+
     private final Index index;
 
     private final EditDeveloperDescriptor editDeveloperDescriptor;
 
 
     /**
-     * @param index of the developer in the filtered developer list to edit
+     * @param index                   of the developer in the filtered developer list to edit
      * @param editDeveloperDescriptor details to edit the developer with
      */
     public EditDeveloperCommand(Index index, EditDeveloperDescriptor editDeveloperDescriptor) {
@@ -90,11 +101,11 @@ public class EditDeveloperCommand extends Command {
         Set<String> updatedProjects = editDeveloperDescriptor.getProjects().orElse(developerToEdit.getProjects());
         GithubId updatedGithubId = editDeveloperDescriptor.getGithubId().orElse(developerToEdit.getGithubId());
         Rating updatedRating = editDeveloperDescriptor.getRating().orElse(developerToEdit.getRating());
-        
+
         return new Developer(updatedName, updatedPhone, updatedEmail, updatedAddress,
                 updatedRole, updatedProjects, updatedSalary, updatedDateJoined, updatedGithubId, updatedRating);
     }
-    
+
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
@@ -164,7 +175,8 @@ public class EditDeveloperCommand extends Command {
         private GithubId githubId;
         private Rating rating;
 
-        public EditDeveloperDescriptor() {}
+        public EditDeveloperDescriptor() {
+        }
 
         /**
          * Copy constructor.
@@ -190,7 +202,7 @@ public class EditDeveloperCommand extends Command {
             return CollectionUtil.isAnyNonNull(
                     name, phone, email, address, projects, dateJoined, role, salary, githubId, rating);
         }
-        
+
         public void setName(Name name) {
             this.name = name;
         }
@@ -230,7 +242,7 @@ public class EditDeveloperCommand extends Command {
         public Optional<Set<String>> getProjects() {
             return (projects != null) ? Optional.of(Collections.unmodifiableSet(projects)) : Optional.empty();
         }
-        
+
         public void setDateJoined(Date dateJoined) {
             this.dateJoined = dateJoined;
         }
@@ -258,15 +270,15 @@ public class EditDeveloperCommand extends Command {
         public void setGithubId(GithubId githubId) {
             this.githubId = githubId;
         }
-        
+
         public Optional<GithubId> getGithubId() {
             return Optional.ofNullable(githubId);
         }
-        
+
         public void setRating(Rating rating) {
             this.rating = rating;
         }
-        
+
         public Optional<Rating> getRating() {
             return Optional.ofNullable(rating);
         }

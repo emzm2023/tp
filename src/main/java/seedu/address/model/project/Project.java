@@ -3,8 +3,6 @@ package seedu.address.model.project;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DATEJOINED;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_DEADLINE;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DOCUMENT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GITHUBID;
@@ -17,22 +15,15 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_ROLE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SALARY;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
 import java.util.function.Predicate;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
-import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.parser.Prefix;
 import seedu.address.model.commons.Name;
-import seedu.address.model.person.Person;
 
 /**
  * Represents a Project in the address book.
@@ -44,14 +35,14 @@ public class Project {
     private final Description description;
     private final List<Deadline> deadlines;
     private final FilteredList<Deadline> filteredDeadlines;
-    public static final Prefix[] unusedPrefixes = new Prefix[]{ PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING,
-            PREFIX_GITHUBID, PREFIX_ADDRESS, PREFIX_DOCUMENT, PREFIX_EMAIL, PREFIX_ORGANISATION, PREFIX_PHONE, 
-            PREFIX_PROJECT, PREFIX_ROLE };
-
-    public static final Prefix[] unusedPrefixesForEdit = new Prefix[]{ PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING,
+    public static final Prefix[] unusedPrefixes = new Prefix[]{PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING,
             PREFIX_GITHUBID, PREFIX_ADDRESS, PREFIX_DOCUMENT, PREFIX_EMAIL, PREFIX_ORGANISATION, PREFIX_PHONE,
-            PREFIX_PROJECT, PREFIX_ROLE, PREFIX_NAME };
-    
+            PREFIX_PROJECT, PREFIX_ROLE};
+
+    public static final Prefix[] unusedPrefixesForEdit = new Prefix[]{PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING,
+            PREFIX_GITHUBID, PREFIX_ADDRESS, PREFIX_DOCUMENT, PREFIX_EMAIL, PREFIX_ORGANISATION, PREFIX_PHONE,
+            PREFIX_PROJECT, PREFIX_ROLE, PREFIX_NAME};
+
     /**
      * Constructs a {@code Tag}.
      *
@@ -64,16 +55,19 @@ public class Project {
         this.deadlines = deadlines;
         this.filteredDeadlines = new FilteredList<>(FXCollections.observableList(deadlines));
     }
-    public void setPredicate (Predicate<Deadline> predicate) {
+
+    public void setPredicate(Predicate<Deadline> predicate) {
         filteredDeadlines.setPredicate(predicate);
     }
+
     public Project(String projectName) {
-        this(new Name(projectName),new Description(""),new ArrayList<>());
+        this(new Name(projectName), new Description(""), new ArrayList<>());
     }
+
     public String getName() {
         return projectName.fullName;
     }
-    
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -103,7 +97,7 @@ public class Project {
     public String toString() {
         return projectName.toString();
     }
-    
+
     public Name getProjectName() {
         return projectName;
     }
@@ -115,13 +109,13 @@ public class Project {
     /**
      * Returns a list with each element being the String representation of the respective deadline.
      * The element at the given index is the String representation of the respective deadline such that it is completed.
-     * 
+     *
      * @param index The index of the deadline to mark as completed.
      * @return A list containing String representations of deadlines.
      */
     public List<String> markDeadlineStringRep(int index) {
         List<String> res = new ArrayList<>();
-        for (int i = 0; i < deadlines.size() ; i++) {
+        for (int i = 0; i < deadlines.size(); i++) {
             if (i == index) {
                 res.add(deadlines.get(i).getDoneStringRepresentation());
             } else {
@@ -140,7 +134,7 @@ public class Project {
      */
     public List<String> unmarkDeadlineStringRep(int index) {
         List<String> res = new ArrayList<>();
-        for (int i = 0; i < deadlines.size() ; i++) {
+        for (int i = 0; i < deadlines.size(); i++) {
             if (i == index) {
                 res.add(deadlines.get(i).getUndoneStringRepresentation());
             } else {
@@ -152,13 +146,13 @@ public class Project {
 
     /**
      * Returns the size of the deadlines list.
-     * 
+     *
      * @return An integer representing the size of the deadlines list.
      */
     public int deadlineListSize() {
         return deadlines.size();
     }
-    
+
     /**
      * Returns an immutable list, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
@@ -166,6 +160,7 @@ public class Project {
     public List<Deadline> getProjectDeadlines() {
         return Collections.unmodifiableList(deadlines);
     }
+
     public FilteredList<Deadline> getProjectFilteredDeadlines() {
         return filteredDeadlines;
     }
@@ -178,7 +173,7 @@ public class Project {
         return otherProject != null
                 && otherProject.getName().equals(getName());
     }
-    
+
     public boolean isSameProject(String projectName) {
         return projectName.equals(getName());
     }

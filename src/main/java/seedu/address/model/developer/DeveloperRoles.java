@@ -1,4 +1,5 @@
 package seedu.address.model.developer;
+
 import static java.util.Objects.requireNonNull;
 
 import java.io.BufferedReader;
@@ -11,7 +12,6 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import seedu.address.model.Model;
-import seedu.address.model.client.RoleClientContainsKeywordsPredicate;
 
 /**
  * Represents a Developer's role in the company.
@@ -50,6 +50,7 @@ public class DeveloperRoles {
         roles.add(role);
         saveDeveloperRoles();
     }
+
     public static void deleteDeveloperRole(DeveloperRoles role) {
         roles.remove(role);
         saveDeveloperRoles();
@@ -130,6 +131,7 @@ public class DeveloperRoles {
         listOfRoles = roles.toString();
         return listOfRoles;
     }
+
     public static void saveDeveloperRoles() {
         try {
             // Save roles to a text file
@@ -142,6 +144,7 @@ public class DeveloperRoles {
             e.printStackTrace();
         }
     }
+
     public static void loadDeveloperRoles() {
         try (BufferedReader reader = new BufferedReader(new FileReader("DeveloperRoles.txt"))) {
             String line;

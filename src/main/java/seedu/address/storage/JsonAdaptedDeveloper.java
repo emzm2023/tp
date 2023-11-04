@@ -16,7 +16,10 @@ import seedu.address.model.developer.DeveloperRoles;
 import seedu.address.model.developer.GithubId;
 import seedu.address.model.developer.Rating;
 import seedu.address.model.developer.Salary;
-import seedu.address.model.person.*;
+import seedu.address.model.person.Address;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Person;
+import seedu.address.model.person.Phone;
 
 /**
  * Jackson-friendly version of {@link Person}.
@@ -117,7 +120,6 @@ class JsonAdaptedDeveloper {
             throw new IllegalValueException(Date.MESSAGE_CONSTRAINTS);
         }
         final Date modelDateJoined = new Date(dateJoined);
-
 
 
         if (role == null) {

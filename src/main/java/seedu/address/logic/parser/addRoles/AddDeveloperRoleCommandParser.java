@@ -1,10 +1,10 @@
 package seedu.address.logic.parser.addRoles;
 
+import static java.util.Objects.requireNonNull;
+
 import seedu.address.logic.commands.addRoles.AddDeveloperRoleCommand;
 import seedu.address.logic.parser.Parser;
 import seedu.address.logic.parser.exceptions.ParseException;
-
-import static java.util.Objects.requireNonNull;
 
 public class AddDeveloperRoleCommandParser implements Parser<AddDeveloperRoleCommand> {
     @Override

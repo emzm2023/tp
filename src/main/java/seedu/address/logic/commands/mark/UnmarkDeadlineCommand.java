@@ -2,7 +2,6 @@ package seedu.address.logic.commands.mark;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DEADLINE;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 
 import java.util.List;
 
@@ -17,7 +16,6 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.edit.EditProjectCommandParser;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.Model;
-import seedu.address.model.project.Deadline;
 import seedu.address.model.project.Project;
 
 public class UnmarkDeadlineCommand extends Command {
@@ -74,7 +72,7 @@ public class UnmarkDeadlineCommand extends Command {
      * parsed by an EditProjectCommandParser.
      *
      * @param stringRep The list containing the string representations of the Deadlines to be passed into the parser.
-     * @param index The index of the Project to edit.
+     * @param index     The index of the Project to edit.
      * @return A String containing the index of the projects and the deadlines including the unmarked deadline.
      */
     private String editProjectArgs(List<String> stringRep, int index) {
@@ -84,7 +82,7 @@ public class UnmarkDeadlineCommand extends Command {
         }
         return res;
     }
-    
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {

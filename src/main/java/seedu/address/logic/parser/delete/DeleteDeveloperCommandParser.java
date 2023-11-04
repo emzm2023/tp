@@ -16,6 +16,7 @@ public class DeleteDeveloperCommandParser implements Parser<DeleteDeveloperComma
     /**
      * Parses the given {@code String} of arguments in the context of the DeleteDeveloperCommand
      * and returns a DeleteDeveloperCommand object for execution.
+     *
      * @throws ParseException if the user input does not conform the expected format
      */
     public DeleteDeveloperCommand parse(String args) throws ParseException {

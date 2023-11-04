@@ -32,7 +32,8 @@ public class AddressBook implements ReadOnlyAddressBook {
         projects = new UniqueProjectList();
     }
 
-    public AddressBook() {}
+    public AddressBook() {
+    }
 
     public AddressBook(ReadOnlyAddressBook toBeCopied) {
         this();
@@ -40,9 +41,10 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /// Project Validation
+
     /**
      * Returns a boolean representing whether the projects assigned to the Person exist.
-     * 
+     *
      * @param person The person to check.
      */
     public String areProjectsValid(Person person) {
@@ -54,7 +56,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         }
         return null;
     }
-            
+
     //// List Overwrite Operations
 
     public void setDevelopers(List<Developer> developers) {
@@ -122,7 +124,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         requireNonNull(project);
         return projects.contains(project);
     }
-    
+
     public boolean hasProject(String project) {
         requireNonNull(project);
         return projects.contains(project);

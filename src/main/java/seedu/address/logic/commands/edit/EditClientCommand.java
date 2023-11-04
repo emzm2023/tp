@@ -1,7 +1,14 @@
 package seedu.address.logic.commands.edit;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.*;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DOCUMENT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ORGANISATION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PROJECT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ROLE;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -23,7 +30,9 @@ import seedu.address.model.client.Client;
 import seedu.address.model.client.ClientRoles;
 import seedu.address.model.client.Document;
 import seedu.address.model.commons.Name;
-import seedu.address.model.person.*;
+import seedu.address.model.person.Address;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Phone;
 
 /**
  * Edits the details of an existing client in the address book.
@@ -57,7 +66,7 @@ public class EditClientCommand extends Command {
 
 
     /**
-     * @param index of the client in the filtered client list to edit
+     * @param index                of the client in the filtered client list to edit
      * @param editClientDescriptor details to edit the client with
      */
     public EditClientCommand(Index index, EditClientDescriptor editClientDescriptor) {
@@ -83,7 +92,7 @@ public class EditClientCommand extends Command {
         Set<String> updatedProjects = editClientDescriptor.getProjects().orElse(clientToEdit.getProjects());
         Name updatedOrganisation = editClientDescriptor.getOrganisation().orElse(clientToEdit.getOrganisation());
         Document updatedDocument = editClientDescriptor.getDocument().orElse(clientToEdit.getDocument());
-        
+
         return new Client(updatedName, updatedPhone, updatedEmail, updatedAddress,
                 updatedRole, updatedProjects, updatedOrganisation, updatedDocument);
     }
@@ -106,7 +115,7 @@ public class EditClientCommand extends Command {
         if (res != null) {
             throw new CommandException(String.format(Messages.MESSAGE_NONEXISTENT_PROJECT, res));
         }
-        
+
         String successMessage = String.format(MESSAGE_EDIT_CLIENT_SUCCESS, Messages.format(editedClient));
         TabIndex index = TabIndex.Client;
 
@@ -154,8 +163,9 @@ public class EditClientCommand extends Command {
         private ClientRoles role;
         private Name organisation;
         private Document document;
-        
-        public EditClientDescriptor() {}
+
+        public EditClientDescriptor() {
+        }
 
         /**
          * Copy constructor.
@@ -223,15 +233,15 @@ public class EditClientCommand extends Command {
         public void setOrganisation(Name organisation) {
             this.organisation = organisation;
         }
-        
+
         public Optional<Name> getOrganisation() {
             return Optional.ofNullable(organisation);
         }
-        
+
         public void setDocument(Document document) {
             this.document = document;
         }
-        
+
         public Optional<Document> getDocument() {
             return Optional.ofNullable(document);
         }

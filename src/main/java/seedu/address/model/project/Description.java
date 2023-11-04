@@ -13,7 +13,7 @@ public class Description {
 
 
     public static final String VALIDATION_REGEX = "^(?!\\\\s*$)[a-zA-Z0-9 ]+$";
-    
+
     public final String desc;
 
     /**
@@ -26,6 +26,7 @@ public class Description {
         checkArgument(isValidDescription(desc), MESSAGE_CONSTRAINTS);
         this.desc = desc;
     }
+
     /**
      * Returns true if a given string is a valid description.
      */

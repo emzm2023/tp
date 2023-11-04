@@ -1,6 +1,7 @@
 package seedu.address.model.client;
 
 import java.util.List;
+
 import seedu.address.commons.util.StringUtil;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.person.KeywordPredicate;

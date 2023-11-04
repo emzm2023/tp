@@ -1,13 +1,11 @@
 package seedu.address.model;
+
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 
 /**
  * Represents a User's password.
@@ -20,7 +18,7 @@ public class Password {
                     " one uppercase letter, and one special character.\n" +
                     "Default password: " + DEFAULT_PASSWORD;
     public static final String VALIDATION_REGEX = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=\\S+$).{8,}$";
-    public static final String filename="pword.txt";
+    public static final String filename = "pword.txt";
     public final String password;
 
     /**
@@ -40,11 +38,13 @@ public class Password {
     public static boolean isValidPassword(String test) {
         return test.matches(VALIDATION_REGEX);
     }
+
     private static final String SALT = "YourFixedSaltHere";
 
     public static String hashPassword(String password) {
-        return password.hashCode()+"";
+        return password.hashCode() + "";
     }
+
     public static void savePasswordToFile(String hashedPassword, String filename) {
         try {
             Files.write(Path.of(filename), hashedPassword.getBytes());
@@ -78,6 +78,7 @@ public class Password {
         System.out.println(storedHashedPassword.equals(enteredHashedPassword));
         return storedHashedPassword.equals(enteredHashedPassword);
     }
+
     public static String changePassword(String currentPassword, String newPassword) {
         if (verifyPassword(currentPassword)) {
             // Verify that the new password meets the constraints

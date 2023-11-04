@@ -29,9 +29,9 @@ public class Developer extends Person {
     private final Rating rating;
     private final DeveloperRoles role;
 
-    public static final Prefix[] unusedPrefixes = new Prefix[]{ PREFIX_ORGANISATION, PREFIX_DOCUMENT, PREFIX_DESCRIPTION,
-            PREFIX_DEADLINE };
-    
+    public static final Prefix[] unusedPrefixes = new Prefix[]{PREFIX_ORGANISATION, PREFIX_DOCUMENT, PREFIX_DESCRIPTION,
+            PREFIX_DEADLINE};
+
     /**
      * Every field must be present and not null.
      */
@@ -53,6 +53,7 @@ public class Developer extends Person {
     public Date getDateJoined() {
         return dateJoined;
     }
+
     public boolean isSameDeveloper(Developer otherDeveloper) {
         if (otherDeveloper == this) {
             return true;
@@ -69,6 +70,7 @@ public class Developer extends Person {
     public Rating getRating() {
         return rating;
     }
+
     public DeveloperRoles getRole() {
         return role;
     }

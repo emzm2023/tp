@@ -1,5 +1,16 @@
 package seedu.address.logic.parser.imports;
 
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_FILE;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Set;
+
 import seedu.address.logic.commands.imports.ImportDeveloperCommand;
 import seedu.address.logic.parser.Parser;
 import seedu.address.logic.parser.ParserUtil;
@@ -11,14 +22,9 @@ import seedu.address.model.developer.DeveloperRoles;
 import seedu.address.model.developer.GithubId;
 import seedu.address.model.developer.Rating;
 import seedu.address.model.developer.Salary;
-import seedu.address.model.person.*;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Set;
-
-import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.Messages.MESSAGE_INVALID_FILE;
+import seedu.address.model.person.Address;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Phone;
 
 public class ImportDeveloperCommandParser implements Parser<ImportDeveloperCommand> {
 
@@ -28,12 +34,12 @@ public class ImportDeveloperCommandParser implements Parser<ImportDeveloperComma
             FileWriter myWriter = new FileWriter("filename.txt");
             myWriter.write("Files in Java might be tricky, but it is fun enough!");
             myWriter.close();
-            fileName=fileName.trim();
+            fileName = fileName.trim();
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             String line = "";
             String splitBy = ",";
             boolean isValid = checkColumnNames(br.readLine());
-            if(!isValid){
+            if (!isValid) {
                 throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ImportDeveloperCommand.MESSAGE_USAGE));
             }
             ArrayList<Developer> toAddList = new ArrayList<>();
@@ -50,12 +56,12 @@ public class ImportDeveloperCommandParser implements Parser<ImportDeveloperComma
                 GithubId githubId = ParserUtil.parseGithubId(employee[7]);
                 Rating rating = ParserUtil.parseRating(employee[8]);
                 ArrayList<String> projects = new ArrayList<>();
-                for(int i=9;i< employee.length;i++) {
+                for (int i = 9; i < employee.length; i++) {
                     projects.add(employee[i]);
                 }
                 Set<String> projectList = ParserUtil.parseProjectsToSet(projects);
 
-                Developer developer = new Developer(name, phone, email, address,role,projectList, salary, dateJoined, githubId, rating);
+                Developer developer = new Developer(name, phone, email, address, role, projectList, salary, dateJoined, githubId, rating);
                 toAddList.add(developer);
 
             }
@@ -66,6 +72,7 @@ public class ImportDeveloperCommandParser implements Parser<ImportDeveloperComma
             throw new ParseException("Error reading line from file " + fileName);
         }
     }
+
     //Name, Contact Number, Email, Address, Date Joined, Role, Salary, githubId, Rating, Projects"
     private boolean checkColumnNames(String line) {
         String[] columnNames = line.split(",");

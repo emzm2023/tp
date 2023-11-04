@@ -1,16 +1,16 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
+
+import java.util.ArrayList;
+
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.developer.Developer;
 
-import java.util.ArrayList;
-
-import static java.util.Objects.requireNonNull;
-
-public class ImportCommand extends Command{
+public class ImportCommand extends Command {
     public static final String COMMAND_WORD = "import";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Imports employees from csv file.\n"
@@ -26,7 +26,7 @@ public class ImportCommand extends Command{
      */
     public ImportCommand(ArrayList<Developer> developerList) {
         requireNonNull(developerList);
-        for(Developer i: developerList) {
+        for (Developer i : developerList) {
             requireNonNull(i);
         }
         toAddList = developerList;
@@ -36,7 +36,7 @@ public class ImportCommand extends Command{
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
         String output = "";
-        for(Developer toAdd: toAddList) {
+        for (Developer toAdd : toAddList) {
             if (model.hasDeveloper(toAdd)) {
                 output += toAdd.getName().fullName + MESSAGE_DUPLICATE_PERSON;
             }
@@ -45,7 +45,7 @@ public class ImportCommand extends Command{
             output += String.format(MESSAGE_SUCCESS, Messages.format(toAdd));
             output += "\n";
         }
-        return new CommandResult(output,TabIndex.Developer);
+        return new CommandResult(output, TabIndex.Developer);
     }
 
     @Override

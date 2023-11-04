@@ -1,10 +1,10 @@
 package seedu.address.model.commons;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  * Represents the date a developer Joined. In the format: dd-MM-YYYY
@@ -20,7 +20,7 @@ public class Date {
      *
      * @param date A valid date string.
      */
-    public Date(String date){
+    public Date(String date) {
         requireNonNull(date);
         checkArgument(isValidDate(date), MESSAGE_CONSTRAINTS);
         try {

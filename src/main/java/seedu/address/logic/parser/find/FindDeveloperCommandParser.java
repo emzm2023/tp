@@ -1,7 +1,6 @@
 package seedu.address.logic.parser.find;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DATEJOINED;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
@@ -21,17 +20,17 @@ import seedu.address.logic.parser.ArgumentMultimap;
 import seedu.address.logic.parser.ArgumentTokenizer;
 import seedu.address.logic.parser.Parser;
 import seedu.address.logic.parser.exceptions.ParseException;
+import seedu.address.model.developer.AddressDeveloperContainsKeywordsPredicate;
 import seedu.address.model.developer.DateJoinedContainsKeywordsPredicate;
 import seedu.address.model.developer.Developer;
-import seedu.address.model.developer.GithubIdContainsKeywordsPredicate;
-import seedu.address.model.developer.RatingContainsKeywordsPredicate;
-import seedu.address.model.developer.SalaryContainsKeywordsPredicate;
-import seedu.address.model.developer.AddressDeveloperContainsKeywordsPredicate;
 import seedu.address.model.developer.EmailDeveloperContainsKeywordsPredicate;
+import seedu.address.model.developer.GithubIdContainsKeywordsPredicate;
 import seedu.address.model.developer.NameDeveloperContainsKeywordsPredicate;
 import seedu.address.model.developer.PhoneDeveloperContainsKeywordsPredicate;
 import seedu.address.model.developer.ProjectDeveloperContainsKeywordsPredicate;
+import seedu.address.model.developer.RatingContainsKeywordsPredicate;
 import seedu.address.model.developer.RoleDeveloperContainsKeywordsPredicate;
+import seedu.address.model.developer.SalaryContainsKeywordsPredicate;
 
 public class FindDeveloperCommandParser implements Parser<FindDeveloperCommand> {
     public FindDeveloperCommand parse(String args) throws ParseException {

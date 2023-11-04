@@ -141,13 +141,14 @@ public class ModelManager implements Model {
         requireNonNull(predicate);
         filteredDevelopers.setPredicate(predicate);
     }
+
     @Override
     public boolean hasClient(Client client) {
         requireNonNull(client);
         return addressBook.hasClient(client);
     }
-    
-    
+
+
     public String areProjectsValid(Person person) {
         requireNonNull(person);
         return addressBook.areProjectsValid(person);
@@ -186,6 +187,7 @@ public class ModelManager implements Model {
         requireNonNull(predicate);
         filteredClients.setPredicate(predicate);
     }
+
     @Override
     public boolean hasProject(seedu.address.model.project.Project project) {
         requireNonNull(project);
@@ -225,13 +227,13 @@ public class ModelManager implements Model {
     public void updateFilteredProjectList(Predicate<seedu.address.model.project.Project> predicate) {
         requireNonNull(predicate);
         filteredProjects.setPredicate(predicate);
-        filteredProjects.forEach(e->e.setPredicate(u->true));
+        filteredProjects.forEach(e -> e.setPredicate(u -> true));
     }
 
     @Override
     public void updateFilteredProjectDeadlineList(Predicate<Deadline> predicate) {
         requireNonNull(predicate);
-        filteredProjects.forEach(e->e.setPredicate(predicate));
+        filteredProjects.forEach(e -> e.setPredicate(predicate));
     }
 
     //=========== Undo/Redo Accessors =============================================================

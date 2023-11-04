@@ -1,5 +1,9 @@
 package seedu.address.ui;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.stream.Collectors;
+
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -7,24 +11,22 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.MainApp;
-import seedu.address.logic.commands.TabIndex;
 import seedu.address.model.commons.Date;
 import seedu.address.model.project.Deadline;
 import seedu.address.model.project.Priority;
 import seedu.address.model.project.Project;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.stream.Collectors;
 
 
 /**
@@ -62,7 +64,7 @@ public class ProjectCard extends UiPart<Region> {
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
      */
-    public ProjectCard (Project project, int displayedIndex) {
+    public ProjectCard(Project project, int displayedIndex) {
         super(FXML);
         this.project = project;
         id.setText(displayedIndex + ". ");
@@ -115,7 +117,7 @@ public class ProjectCard extends UiPart<Region> {
         doneCol.setMinWidth(95);
         Image imageTrue = new Image(MainApp.class.getResourceAsStream("/images/tick.png"));
         Image imageFalse = new Image(MainApp.class.getResourceAsStream("/images/cross.png"));
-        doneCol.setCellFactory(col -> new TableCell<ProjectCard, Boolean>(){
+        doneCol.setCellFactory(col -> new TableCell<ProjectCard, Boolean>() {
 
             private final ImageView imageView = new ImageView();
 
@@ -125,6 +127,7 @@ public class ProjectCard extends UiPart<Region> {
                 imageView.setFitHeight(20);
                 setGraphic(imageView);
             }
+
             @Override
             protected void updateItem(Boolean item, boolean empty) {
                 if (empty || item == null) {
@@ -143,20 +146,20 @@ public class ProjectCard extends UiPart<Region> {
         indexCol.setMinWidth(20);
         indexCol.setCellValueFactory(
                 new PropertyValueFactory<>("index"));
-        table.getColumns().addAll(indexCol, doneCol, priorityCol,dateCol,descriptionCol);
+        table.getColumns().addAll(indexCol, doneCol, priorityCol, dateCol, descriptionCol);
         ObservableList<Data> data = FXCollections.observableList(project.getProjectFilteredDeadlines().stream()
-                .map(deadline ->new Data(deadline)).collect(Collectors.toList()));
+                .map(deadline -> new Data(deadline)).collect(Collectors.toList()));
         project.getProjectFilteredDeadlines().addListener(new ListChangeListener<Deadline>() {
             @Override
             public void onChanged(Change<? extends Deadline> c) {
                 ObservableList<Data> data = FXCollections.observableList(project.getProjectFilteredDeadlines().stream()
-                        .map(deadline ->new Data(deadline)).collect(Collectors.toList()));
-                progress.setProgress(data.stream().filter(t->t.getIsDone()).count()*1.0/data.size());
+                        .map(deadline -> new Data(deadline)).collect(Collectors.toList()));
+                progress.setProgress(data.stream().filter(t -> t.getIsDone()).count() * 1.0 / data.size());
                 table.setItems(data);
             }
         });
 
-        progress.setProgress(data.stream().filter(t->t.getIsDone()).count()*1.0/data.size());
+        progress.setProgress(data.stream().filter(t -> t.getIsDone()).count() * 1.0 / data.size());
         table.setItems(data);
     }
 
@@ -168,28 +171,35 @@ public class ProjectCard extends UiPart<Region> {
         private final SimpleBooleanProperty isDone;
         private final SimpleIntegerProperty index;
         private final SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-        
-        private Data(Deadline deadline){
+
+        private Data(Deadline deadline) {
             date = new SimpleObjectProperty(deadline.getDate());
             description = new SimpleStringProperty(deadline.getDescription().desc);
             priority = new SimpleObjectProperty(deadline.getPriority());
             isDone = new SimpleBooleanProperty(deadline.getIsDone());
             index = new SimpleIntegerProperty(deadline.getNum());
         }
-        
-        public int getIndex() { return index.get(); }
-        public void setIndex(int num) { this.index.set(num);}
+
+        public int getIndex() {
+            return index.get();
+        }
+
+        public void setIndex(int num) {
+            this.index.set(num);
+        }
+
         public String getDate() {
             return date.get().toString();
         }
-        public Date getDateObject(){
+
+        public Date getDateObject() {
             return date.get();
         }
 
         public void setDate(String date) throws ParseException {
             this.date.set(new seedu.address.model.commons.Date(date));
         }
-     
+
         public boolean getIsDone() {
             return isDone.get();
         }
@@ -197,19 +207,19 @@ public class ProjectCard extends UiPart<Region> {
         public void setIsDone(boolean isDone) {
             this.isDone.set(isDone);
         }
-        
+
         public String getDescription() {
             return description.get();
         }
-        
+
         public void setDescription(String description) {
             this.description.set(description);
         }
-        
+
         public String getPriority() {
             return priority.get().toString();
         }
-        
+
         public void setPriority(String priority) {
             this.priority.set(Priority.valueOf(priority));
         }

@@ -10,16 +10,15 @@ import java.util.Set;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import seedu.address.model.client.Client;
-import seedu.address.model.person.exceptions.DuplicateDeveloperException;
 import seedu.address.model.person.exceptions.DeveloperNotFoundException;
+import seedu.address.model.person.exceptions.DuplicateDeveloperException;
 
 /**
  * A list of developers that enforces uniqueness between its elements and does not allow nulls.
  * A developer is considered unique by comparing using {@code Developer#isSameDeveloper(Developer)}.
  * As such, adding and updating of developers use Developer#isSameDeveloper(Developer) for equality to ensure that the developer being added or updated is unique in terms of identity in the UniqueDeveloperList.
  * However, the removal of a developer uses Developer#equals(Object) to ensure that the developer with exactly the same fields will be removed.
- *
+ * <p>
  * Supports a minimal set of list operations.
  *
  * @see Developer#isSameDeveloper(Developer)

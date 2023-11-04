@@ -1,7 +1,6 @@
 package seedu.address.logic.parser.find;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DOCUMENT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
@@ -36,6 +35,7 @@ public class FindClientCommandParser implements Parser<FindClientCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the FindClientCommand
      * and returns a FindClientCommand object for execution.
+     *
      * @throws ParseException if the user input does not conform the expected format
      */
     public FindClientCommand parse(String args) throws ParseException {

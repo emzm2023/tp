@@ -1,11 +1,4 @@
 package seedu.address.model.client;
-import seedu.address.logic.parser.Prefix;
-import seedu.address.model.commons.Name;
-import seedu.address.model.developer.DeveloperRoles;
-import seedu.address.model.person.*;
-
-import java.util.Objects;
-import java.util.Set;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DATEJOINED;
@@ -14,6 +7,16 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_GITHUBID;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_RATING;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SALARY;
+
+import java.util.Objects;
+import java.util.Set;
+
+import seedu.address.logic.parser.Prefix;
+import seedu.address.model.commons.Name;
+import seedu.address.model.person.Address;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Person;
+import seedu.address.model.person.Phone;
 
 /**
  * Represents a Client in the address book, extending the Developer class.
@@ -24,9 +27,9 @@ public class Client extends Person {
     private final Document document;
     private final ClientRoles role;
 
-    public static final Prefix[] unusedPrefixes = new Prefix[]{ PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING,
-            PREFIX_GITHUBID, PREFIX_DESCRIPTION, PREFIX_DEADLINE };
-    
+    public static final Prefix[] unusedPrefixes = new Prefix[]{PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING,
+            PREFIX_GITHUBID, PREFIX_DESCRIPTION, PREFIX_DEADLINE};
+
     /**
      * Every field must be present and not null.
      */
@@ -46,6 +49,7 @@ public class Client extends Person {
     public Document getDocument() {
         return document;
     }
+
     public ClientRoles getRole() {
         return role;
     }

@@ -1,7 +1,6 @@
 package seedu.address.logic.commands.find;
 
 import static java.util.Objects.requireNonNull;
-
 import static seedu.address.logic.Messages.getMessageProjectsListedOverview;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DEADLINE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESCRIPTION;

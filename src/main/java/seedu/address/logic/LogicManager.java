@@ -73,10 +73,12 @@ public class LogicManager implements Logic {
     public ObservableList<Developer> getFilteredDeveloperList() {
         return model.getFilteredDeveloperList();
     }
+
     @Override
     public ObservableList<Client> getFilteredClientList() {
         return model.getFilteredClientList();
     }
+
     @Override
     public ObservableList<seedu.address.model.project.Project> getFilteredProjectList() {
         return model.getFilteredProjectList();

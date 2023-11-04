@@ -28,7 +28,7 @@ public class Rating {
      * Returns true if a given string is a valid salary.
      */
     public static boolean isValidRating(String test) {
-        return test.matches(VALIDATION_REGEX) && Double.valueOf(test)<=5 && Double.valueOf(test)>=0;
+        return test.matches(VALIDATION_REGEX) && Double.valueOf(test) <= 5 && Double.valueOf(test) >= 0;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Rating {
         }
 
         Rating otherRating = (Rating) other;
-        return rating== otherRating.rating;
+        return rating == otherRating.rating;
     }
 
     @Override

@@ -50,7 +50,7 @@ public class Salary {
         }
 
         Salary otherSalary = (Salary) other;
-        return salary== otherSalary.salary;
+        return salary == otherSalary.salary;
     }
 
     @Override

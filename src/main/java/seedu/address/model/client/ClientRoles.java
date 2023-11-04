@@ -12,9 +12,6 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import seedu.address.model.Model;
-import seedu.address.model.developer.Developer;
-import seedu.address.model.developer.DeveloperRoles;
-import seedu.address.model.developer.RoleDeveloperContainsKeywordsPredicate;
 
 /**
  * Represents a Developer's role in the company.
@@ -40,6 +37,7 @@ public class ClientRoles {
         requireNonNull(role);
         this.role = role;
     }
+
     static {
         roles.add(new ClientRoles("Manager"));
         roles.add(new ClientRoles("Developer"));
@@ -57,6 +55,7 @@ public class ClientRoles {
         roles.remove(role);
         saveClientRoles();
     }
+
     /**
      * Returns true if a given string is a valid role.
      */
@@ -133,6 +132,7 @@ public class ClientRoles {
             e.printStackTrace();
         }
     }
+
     public static void loadClientRoles() {
         try (BufferedReader reader = new BufferedReader(new FileReader("ClientRoles.txt"))) {
             String line;
@@ -157,6 +157,7 @@ public class ClientRoles {
     public static boolean isNoRepeat() {
         return noRepeat;
     }
+
     public static boolean isNotInList() {
         return notInList;
     }
