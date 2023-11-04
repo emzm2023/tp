@@ -142,17 +142,15 @@ Here are some notes about these parameters.
 | `o/`      | organisation name of client | alphanumeric characters and spaces, and it should not be blank | Google         |                  |
 | `do/`     | document name of client     | alphanumeric characters and spaces, and it should not be blank | google.com     |                  |
 
-<<<<<<< HEAD
-=======
 
 #### Project Parameters
 
 | Parameter                      | Description            | Constraints                                                    | Valid Examples    | Invalid Examples |
 |--------------------------------|------------------------|----------------------------------------------------------------|-------------------|------------------|
-| `dr/`                          | description of project | alphanumeric characters and spaces, and it should not be blank | App to allow for  
- different juices to be ordered |                        |
-| `dl/`                          | deadline of project    | alphanumeric characters and spaces, and it should not be blank | 19-12-2023,Design 
- backend,HIGH,0                 |                        |
+| `dr/`                          | description of project | alphanumeric characters and spaces, and it should not be blank | App to allow for  |                  |
+| different juices to be ordered |                        |                                                                |                   |                  |
+| `dl/`                          | deadline of project    | alphanumeric characters and spaces, and it should not be blank | 19-12-2023,Design |                  |
+| backend,HIGH,0                 |                        |                                                                |                   |                  |
 
 > > > > > > > master
 

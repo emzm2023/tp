@@ -28,7 +28,7 @@ public class Client extends Person {
     private final Name organisation;
     private final Document document;
     private final ClientRoles role;
-    
+
     /**
      * Every field must be present and not null.
      */

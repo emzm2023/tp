@@ -305,11 +305,11 @@ the data of your previous AddressBook home folder.
 
 ## Command summary
 
- Action     | Format, Examples                                                         
-------------|--------------------------------------------------------------------------
- **add**    | Format: <br> <br> Example: <br><br>                                      
- **edit**   | Format: <br> <br> Example: <br><br>                                      
- **search** | Format: <br> <br> Example: <br><br>                                      
- **delete** | Format: <br> <br> Example: <br><br>                                      
- **list**   | Format: <br> `list developers` <br>  `list projects` <br> `list clients` 
- **help**   | `help`                                                                   
+| Action     | Format, Examples                                                         |
+|------------|--------------------------------------------------------------------------|
+| **add**    | Format: <br> <br> Example: <br><br>                                      |
+| **edit**   | Format: <br> <br> Example: <br><br>                                      |
+| **search** | Format: <br> <br> Example: <br><br>                                      |
+| **delete** | Format: <br> <br> Example: <br><br>                                      |
+| **list**   | Format: <br> `list developers` <br>  `list projects` <br> `list clients` |
+| **help**   | `help`                                                                   |
