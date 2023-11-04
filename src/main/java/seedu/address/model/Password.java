@@ -14,9 +14,8 @@ import java.nio.file.Path;
 public class Password {
     public static final String DEFAULT_PASSWORD = "Password123!";
     public static final String MESSAGE_CONSTRAINTS =
-            "Password must be at least 8 characters long and contain at least one digit, one lowercase letter," +
-                    " one uppercase letter, and one special character.\n" +
-                    "Default password: " + DEFAULT_PASSWORD;
+            "Password must be at least 8 characters long and contain at least one digit, one lowercase letter,"
+                    + " one uppercase letter, and one special character.\n" + "Default password: " + DEFAULT_PASSWORD;
     public static final String VALIDATION_REGEX = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=\\S+$).{8,}$";
     public static final String filename = "pword.txt";
     public final String password;

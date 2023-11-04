@@ -14,8 +14,8 @@ public class UnlockCommand extends Command {
 
     public static final String MESSAGE_SUCCESS = "Unlocked all data";
     public static final String MESSAGE_FAILURE = "Incorrect Password!\n";
-    public static final Object MESSAGE_USAGE = COMMAND_WORD + ": Please unlock using correct format\n"
-            + "Example: " + COMMAND_WORD + " pw/Password123!";
+    public static final Object MESSAGE_USAGE =
+            COMMAND_WORD + ": Please unlock using correct format\n" + "Example: " + COMMAND_WORD + " pw/Password123!";
     private String input;
 
     public UnlockCommand(String input) {

@@ -47,26 +47,18 @@ public class EditDeveloperCommand extends Command {
     public static final String COMMAND_WORD = "edit-developer";
     public static final String MESSAGE_EDIT_DEVELOPER_SUCCESS = "Edited Developer: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_DEVELOPER = "The details of the developer in the address book are " +
-            "already as given.";
+    public static final String MESSAGE_DUPLICATE_DEVELOPER =
+            "The details of the developer in the address book are " + "already as given.";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the developer identified "
             + "by the index number used in the displayed developer list. "
             + "Existing values will be overwritten by the input values.\n"
-            + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_NAME + "NAME] "
-            + "[" + PREFIX_PHONE + "PHONE] "
-            + "[" + PREFIX_EMAIL + "EMAIL] "
-            + "[" + PREFIX_ADDRESS + "ADDRESS] "
-            + "[" + PREFIX_ROLE + "ROLE] "
-            + "[" + PREFIX_PROJECT + "PROJECT]...\n"
-            + "[" + PREFIX_SALARY + "SALARY] "
-            + "[" + PREFIX_DATEJOINED + "DATE JOINED] "
-            + "[" + PREFIX_GITHUBID + "GITHUBID] "
-            + "[" + PREFIX_RATING + "RATING] "
-            + "Example: \n" + COMMAND_WORD + " 1 "
-            + PREFIX_PHONE + "91234567 "
-            + PREFIX_EMAIL + "johndoe@example.com";
+            + "Parameters: INDEX (must be a positive integer) " + "[" + PREFIX_NAME + "NAME] " + "[" + PREFIX_PHONE
+            + "PHONE] " + "[" + PREFIX_EMAIL + "EMAIL] " + "[" + PREFIX_ADDRESS + "ADDRESS] " + "[" + PREFIX_ROLE
+            + "ROLE] " + "[" + PREFIX_PROJECT + "PROJECT]...\n" + "[" + PREFIX_SALARY + "SALARY] " + "["
+            + PREFIX_DATEJOINED + "DATE JOINED] " + "[" + PREFIX_GITHUBID + "GITHUBID] " + "[" + PREFIX_RATING
+            + "RATING] " + "Example: \n" + COMMAND_WORD + " 1 " + PREFIX_PHONE + "91234567 " + PREFIX_EMAIL
+            + "johndoe@example.com";
 
     private final Index index;
 
@@ -103,8 +95,8 @@ public class EditDeveloperCommand extends Command {
         GithubId updatedGithubId = editDeveloperDescriptor.getGithubId().orElse(developerToEdit.getGithubId());
         Rating updatedRating = editDeveloperDescriptor.getRating().orElse(developerToEdit.getRating());
 
-        return new Developer(updatedName, updatedPhone, updatedEmail, updatedAddress,
-                updatedRole, updatedProjects, updatedSalary, updatedDateJoined, updatedGithubId, updatedRating);
+        return new Developer(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedRole, updatedProjects,
+                updatedSalary, updatedDateJoined, updatedGithubId, updatedRating);
     }
 
     @Override
@@ -154,10 +146,7 @@ public class EditDeveloperCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("index", index)
-                .add("editDeveloperDescriptor", editDeveloperDescriptor)
-                .toString();
+        return new ToStringBuilder(this).add("index", index).add("editDeveloperDescriptor", editDeveloperDescriptor).toString();
     }
 
     /**
@@ -200,8 +189,8 @@ public class EditDeveloperCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(
-                    name, phone, email, address, projects, dateJoined, role, salary, githubId, rating);
+            return CollectionUtil.isAnyNonNull(name, phone, email, address, projects, dateJoined, role, salary,
+                    githubId, rating);
         }
 
         public void setName(Name name) {
@@ -307,18 +296,9 @@ public class EditDeveloperCommand extends Command {
 
         @Override
         public String toString() {
-            return new ToStringBuilder(this)
-                    .add("name", name)
-                    .add("phone", phone)
-                    .add("email", email)
-                    .add("address", address)
-                    .add("projects", projects)
-                    .add("dateJoined", dateJoined)
-                    .add("role", role)
-                    .add("salary", salary)
-                    .add("githubId", githubId)
-                    .add("rating", rating)
-                    .toString();
+            return new ToStringBuilder(this).add("name", name).add("phone", phone).add("email", email).add("address",
+                    address).add("projects", projects).add("dateJoined", dateJoined).add("role", role).add("salary",
+                    salary).add("githubId", githubId).add("rating", rating).toString();
         }
     }
 }

@@ -46,8 +46,7 @@ class JsonAdaptedProject {
 
         projectName = source.getProjectName().fullName;
         description = source.getProjectDescription().desc;
-        deadlines.addAll(source.getProjectDeadlines().stream()
-                .map(Deadline::getStringRepresentation).collect(Collectors.toList()));
+        deadlines.addAll(source.getProjectDeadlines().stream().map(Deadline::getStringRepresentation).collect(Collectors.toList()));
     }
 
 

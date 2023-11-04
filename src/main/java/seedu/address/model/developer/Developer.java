@@ -30,8 +30,8 @@ public class Developer extends Person {
     private final Rating rating;
     private final DeveloperRoles role;
 
-    public static final Prefix[] unusedPrefixes = new Prefix[]{PREFIX_ORGANISATION, PREFIX_DOCUMENT, PREFIX_DESCRIPTION,
-            PREFIX_DEADLINE};
+    public static final Prefix[] unusedPrefixes = new Prefix[]{PREFIX_ORGANISATION, PREFIX_DOCUMENT,
+            PREFIX_DESCRIPTION, PREFIX_DEADLINE};
 
     /**
      * Every field must be present and not null.
@@ -60,8 +60,7 @@ public class Developer extends Person {
             return true;
         }
 
-        return otherDeveloper != null
-                && otherDeveloper.getName().equals(getName());
+        return otherDeveloper != null && otherDeveloper.getName().equals(getName());
     }
 
     public GithubId getGithubId() {
@@ -88,8 +87,7 @@ public class Developer extends Person {
 
         Developer otherDeveloper = (Developer) other;
         return super.equals(otherDeveloper) && salary.equals(otherDeveloper.salary)
-                && dateJoined.equals(otherDeveloper.dateJoined)
-                && githubId.equals(otherDeveloper.githubId)
+                && dateJoined.equals(otherDeveloper.dateJoined) && githubId.equals(otherDeveloper.githubId)
                 && rating.equals(otherDeveloper.rating);
     }
 
@@ -100,7 +98,7 @@ public class Developer extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + " Salary: " + salary + " Date Joined: " + dateJoined
-                + " Github ID: " + githubId + " Rating: " + rating;
+        return super.toString() + " Salary: " + salary + " Date Joined: " + dateJoined + " Github ID: " + githubId
+                + " Rating: " + rating;
     }
 }

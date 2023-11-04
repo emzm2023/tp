@@ -32,18 +32,15 @@ public class EditProjectCommand extends Command {
     public static final String COMMAND_WORD = "edit-project";
     public static final String MESSAGE_EDIT_PROJECT_SUCCESS = "Edited Project: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_PROJECT = "The details of the project in the address book are " +
-            "already as given.";
+    public static final String MESSAGE_DUPLICATE_PROJECT =
+            "The details of the project in the address book are " + "already as given.";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the project identified "
             + "by the index number used in the displayed project list. "
-            + "Existing values will be overwritten by the input values.\n"
-            + Deadline.MESSAGE_CONSTRAINTS + "\n"
-            + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] "
-            + "[" + PREFIX_DEADLINE + "DEADLINE_DATE,DEADLINE_DESCRIPTION,PRIORITY,IS_DONE]...\n"
-            + "Example: \n" + COMMAND_WORD + " 1 "
-            + PREFIX_DEADLINE + "31-12-2019,Develop front end interface,HIGH,0 "
+            + "Existing values will be overwritten by the input values.\n" + Deadline.MESSAGE_CONSTRAINTS + "\n"
+            + "Parameters: INDEX (must be a positive integer) " + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] " + "["
+            + PREFIX_DEADLINE + "DEADLINE_DATE,DEADLINE_DESCRIPTION,PRIORITY,IS_DONE]...\n" + "Example: \n"
+            + COMMAND_WORD + " 1 " + PREFIX_DEADLINE + "31-12-2019,Develop front end interface,HIGH,0 "
             + PREFIX_DEADLINE + "01-02-2020,Develop back end,HIGH,0";
 
     private final Index index;
@@ -72,8 +69,8 @@ public class EditProjectCommand extends Command {
         assert projectToEdit != null;
 
         Name name = projectToEdit.getProjectName();
-        Description updatedDescription = editProjectDescriptor.getDescription()
-                .orElse(projectToEdit.getProjectDescription());
+        Description updatedDescription =
+                editProjectDescriptor.getDescription().orElse(projectToEdit.getProjectDescription());
         List<Deadline> updatedDeadlines =
                 editProjectDescriptor.getDeadlines().orElse(projectToEdit.getProjectDeadlines());
 
@@ -123,10 +120,7 @@ public class EditProjectCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("index", index)
-                .add("editProjectDescriptor", editProjectDescriptor)
-                .toString();
+        return new ToStringBuilder(this).add("index", index).add("editProjectDescriptor", editProjectDescriptor).toString();
     }
 
     /**
@@ -153,8 +147,7 @@ public class EditProjectCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(
-                    desc, deadlines);
+            return CollectionUtil.isAnyNonNull(desc, deadlines);
         }
 
         public Optional<Description> getDescription() {
@@ -190,10 +183,7 @@ public class EditProjectCommand extends Command {
 
         @Override
         public String toString() {
-            return new ToStringBuilder(this)
-                    .add("description", desc)
-                    .add("deadlines", deadlines)
-                    .toString();
+            return new ToStringBuilder(this).add("description", desc).add("deadlines", deadlines).toString();
         }
     }
 }

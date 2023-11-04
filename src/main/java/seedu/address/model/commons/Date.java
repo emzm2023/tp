@@ -10,8 +10,7 @@ import java.text.SimpleDateFormat;
  * Represents the date a developer Joined. In the format: dd-MM-YYYY
  */
 public class Date {
-    public static final String MESSAGE_CONSTRAINTS =
-            "Date should be of the format dd-MM-yyyy. Eg: 31-12-2019";
+    public static final String MESSAGE_CONSTRAINTS = "Date should be of the format dd-MM-yyyy. Eg: 31-12-2019";
     public static final String VALIDATION_REGEX = "[0-3]\\d-[01]\\d-\\d{4}";
     public final java.util.Date value;
 
@@ -35,8 +34,7 @@ public class Date {
      * Returns true if a given string is a valid date.
      */
     public static boolean isValidDate(String text) {
-        if (text == null || !text.matches(VALIDATION_REGEX))
-            return false;
+        if (text == null || !text.matches(VALIDATION_REGEX)) return false;
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         df.setLenient(false);
         try {

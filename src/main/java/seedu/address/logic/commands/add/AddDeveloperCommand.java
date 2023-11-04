@@ -28,30 +28,16 @@ public class AddDeveloperCommand extends Command {
 
     public static final String COMMAND_WORD = "add-developer";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a developer to the address book. "
-            + "\n Parameters: "
-            + PREFIX_NAME + "NAME "
-            + PREFIX_PHONE + "PHONE "
-            + PREFIX_EMAIL + "EMAIL "
-            + PREFIX_ADDRESS + "ADDRESS "
-            + PREFIX_ROLE + "ROLE "
-            + "[" + PREFIX_PROJECT + "PROJECT]...\n"
-            + PREFIX_SALARY + "SALARY "
-            + PREFIX_DATEJOINED + "DATE JOINED (Optional) "
-            + PREFIX_GITHUBID + "GITHUBID "
-            + PREFIX_RATING + "RATING \n"
-            + "Example: \n" + COMMAND_WORD + " "
-            + PREFIX_NAME + "John Doe "
-            + PREFIX_PHONE + "98765432 "
-            + PREFIX_EMAIL + "johnd@example.com "
-            + PREFIX_ADDRESS + "311, Clementi Ave 2, #02-25 "
-            + PREFIX_ROLE + "Developer "
-            + PREFIX_PROJECT + "AndroidApp "
-            + PREFIX_PROJECT + "CustomWebsite "
-            + PREFIX_SALARY + "4500 "
-            + PREFIX_DATEJOINED + "19-11-2023 "
-            + PREFIX_GITHUBID + "johng "
-            + PREFIX_RATING + "3";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Adds a developer to the address book. " + "\n Parameters: " + PREFIX_NAME + "NAME "
+                    + PREFIX_PHONE + "PHONE " + PREFIX_EMAIL + "EMAIL " + PREFIX_ADDRESS + "ADDRESS " + PREFIX_ROLE
+                    + "ROLE " + "[" + PREFIX_PROJECT + "PROJECT]...\n" + PREFIX_SALARY + "SALARY " + PREFIX_DATEJOINED
+                    + "DATE JOINED (Optional) " + PREFIX_GITHUBID + "GITHUBID " + PREFIX_RATING + "RATING \n"
+                    + "Example: \n" + COMMAND_WORD + " " + PREFIX_NAME + "John Doe " + PREFIX_PHONE + "98765432 "
+                    + PREFIX_EMAIL + "johnd@example.com " + PREFIX_ADDRESS + "311, Clementi Ave 2, #02-25 "
+                    + PREFIX_ROLE + "Developer " + PREFIX_PROJECT + "AndroidApp " + PREFIX_PROJECT + "CustomWebsite "
+                    + PREFIX_SALARY + "4500 " + PREFIX_DATEJOINED + "19-11-2023 " + PREFIX_GITHUBID + "johng "
+                    + PREFIX_RATING + "3";
 
     public static final String MESSAGE_SUCCESS = "New developer added: %1$s";
     public static final String MESSAGE_DUPLICATE_DEVELOPER = "This developer already exists in the address book";
@@ -103,8 +89,6 @@ public class AddDeveloperCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("toAdd", toAdd)
-                .toString();
+        return new ToStringBuilder(this).add("toAdd", toAdd).toString();
     }
 }

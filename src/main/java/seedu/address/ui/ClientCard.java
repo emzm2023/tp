@@ -63,7 +63,6 @@ public class ClientCard extends UiPart<Region> {
         document.setText("Document: " + client.getDocument().toString());
 
         address.setText("Address: " + client.getAddress().value);
-        client.getProjects().stream()
-                .forEach(tag -> tags.getChildren().add(new Label(tag)));
+        client.getProjects().stream().forEach(tag -> tags.getChildren().add(new Label(tag)));
     }
 }

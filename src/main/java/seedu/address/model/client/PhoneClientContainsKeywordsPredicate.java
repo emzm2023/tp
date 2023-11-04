@@ -18,8 +18,8 @@ public class PhoneClientContainsKeywordsPredicate implements KeywordPredicate<Cl
 
     @Override
     public boolean test(Client client) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(client.getPhone().value, keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(client.getPhone().value,
+                keyword));
     }
 
     @Override

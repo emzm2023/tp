@@ -18,8 +18,7 @@ public class SalaryContainsKeywordsPredicate implements KeywordPredicate<Develop
 
     @Override
     public boolean test(Developer developer) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getSalary().toString(), keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getSalary().toString(), keyword));
     }
 
     @Override

@@ -117,8 +117,8 @@ public class EditClientCommandParser implements Parser<EditClientCommand> {
         if (projects.isEmpty()) {
             return Optional.empty();
         }
-        Collection<String> projectSet = projects.size() == 1 && projects.contains("") ? Collections.emptySet() :
-                projects;
+        Collection<String> projectSet =
+                projects.size() == 1 && projects.contains("") ? Collections.emptySet() : projects;
         return Optional.of(ParserUtil.parseProjectsToSet(projectSet));
     }
 }

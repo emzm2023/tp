@@ -38,8 +38,8 @@ public class Project {
             PREFIX_GITHUBID, PREFIX_ADDRESS, PREFIX_DOCUMENT, PREFIX_EMAIL, PREFIX_ORGANISATION, PREFIX_PHONE,
             PREFIX_PROJECT, PREFIX_ROLE};
 
-    public static final Prefix[] unusedPrefixesForEdit = new Prefix[]{PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING,
-            PREFIX_GITHUBID, PREFIX_ADDRESS, PREFIX_DOCUMENT, PREFIX_EMAIL, PREFIX_ORGANISATION, PREFIX_PHONE,
+    public static final Prefix[] unusedPrefixesForEdit = new Prefix[]{PREFIX_DATEJOINED, PREFIX_SALARY, PREFIX_RATING
+            , PREFIX_GITHUBID, PREFIX_ADDRESS, PREFIX_DOCUMENT, PREFIX_EMAIL, PREFIX_ORGANISATION, PREFIX_PHONE,
             PREFIX_PROJECT, PREFIX_ROLE, PREFIX_NAME};
 
     /**
@@ -79,8 +79,7 @@ public class Project {
         }
 
         Project otherTag = (Project) other;
-        return projectName.equals(otherTag.projectName)
-                && description.equals(otherTag.description)
+        return projectName.equals(otherTag.projectName) && description.equals(otherTag.description)
                 && deadlines.equals(otherTag.deadlines);
     }
 
@@ -170,8 +169,7 @@ public class Project {
             return true;
         }
 
-        return otherProject != null
-                && otherProject.getName().equals(getName());
+        return otherProject != null && otherProject.getName().equals(getName());
     }
 
     public boolean isSameProject(String projectName) {

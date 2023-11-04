@@ -1,7 +1,5 @@
 package seedu.address.logic.commands;
 
 public enum TabIndex {
-    Developer,
-    Client,
-    developers, Project
+    Developer, Client, developers, Project
 }

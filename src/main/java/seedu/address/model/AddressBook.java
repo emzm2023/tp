@@ -147,11 +147,8 @@ public class AddressBook implements ReadOnlyAddressBook {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("developers", developers)
-                .add("clients", clients)
-                .add("projects", projects)
-                .toString();
+        return new ToStringBuilder(this).add("developers", developers).add("clients", clients).add("projects",
+                projects).toString();
     }
 
     @Override
@@ -180,8 +177,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         }
 
         AddressBook otherAddressBook = (AddressBook) other;
-        return developers.equals(otherAddressBook.developers)
-                && clients.equals(otherAddressBook.clients)
+        return developers.equals(otherAddressBook.developers) && clients.equals(otherAddressBook.clients)
                 && projects.equals(otherAddressBook.projects);
     }
 

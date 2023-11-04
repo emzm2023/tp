@@ -10,8 +10,8 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class GithubId {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "GitHub usernames should only contain alphanumeric characters or hyphens, and should not violate length " +
-                    "constraints";
+            "GitHub usernames should only contain alphanumeric characters or hyphens, and should not violate length "
+                    + "constraints";
 
     public static final String VALIDATION_REGEX = "^(?!-)[a-zA-Z0-9-]{1,38}[a-zA-Z0-9]$";
 

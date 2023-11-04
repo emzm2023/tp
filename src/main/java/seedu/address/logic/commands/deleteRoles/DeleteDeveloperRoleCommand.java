@@ -16,13 +16,13 @@ import seedu.address.model.developer.DeveloperRoles;
 public class DeleteDeveloperRoleCommand extends Command {
     public static final String COMMAND_WORD = "delete-developer-role";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Delete a role for developers in the address book. "
-            + "Parameters: " + PREFIX_ROLE + "ROLE "
-            + "Example: " + PREFIX_ROLE + "Developer ";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Delete a role for developers in the address book. " + "Parameters: " + PREFIX_ROLE
+                    + "ROLE " + "Example: " + PREFIX_ROLE + "Developer ";
 
     public static final String MESSAGE_SUCCESS = "Role for developers deleted: %1$s";
-    public static final String MESSAGE_CANNOT_DELETE_REPEAT = "This developer role cannot be deleted "
-            + "as there are developers of this role";
+    public static final String MESSAGE_CANNOT_DELETE_REPEAT =
+            "This developer role cannot be deleted " + "as there are developers of this role";
     public static final String MESSAGE_CANNOT_DELETE_PREXISTS = "You are not allowed to delete this developer role.";
     public static final String MESSAGE_CANNOT_DELETE_NONEXISTING = "This developer role does not exist. ";
     public static final String MESSAGE_EXISTING_DEVELOPERS_ROLES = "These are the existing developer roles: \n";
@@ -77,8 +77,6 @@ public class DeleteDeveloperRoleCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("toAdd", toAdd)
-                .toString();
+        return new ToStringBuilder(this).add("toAdd", toAdd).toString();
     }
 }

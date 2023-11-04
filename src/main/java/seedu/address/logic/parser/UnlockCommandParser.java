@@ -17,7 +17,6 @@ public class UnlockCommandParser implements Parser<UnlockCommand> {
             String input = ParserUtil.parsePassword(argMultimap.getValue(PREFIX_PASSWORD).get());
             return new UnlockCommand(input);
         }
-        throw new ParseException(
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, UnlockCommand.MESSAGE_USAGE));
+        throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, UnlockCommand.MESSAGE_USAGE));
     }
 }

@@ -25,19 +25,14 @@ import seedu.address.model.developer.Developer;
 public class FindDeveloperCommand extends Command {
 
     public static final String COMMAND_WORD = "find-developer";
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Find developers based on various attributes.\n"
-            + "Parameters: "
-            + "[" + PREFIX_NAME + "NAME_KEYWORDS] "
-            + "[" + PREFIX_ROLE + "ROLE_KEYWORDS] "
-            + "[" + PREFIX_ADDRESS + "ADDRESS_KEYWORDS] "
-            + "[" + PREFIX_DATEJOINED + "DATE_JOINED_KEYWORDS] "
-            + "[" + PREFIX_EMAIL + "EMAIL_KEYWORDS] "
-            + "[" + PREFIX_PHONE + "PHONE_KEYWORDS] "
-            + "[" + PREFIX_PROJECT + "PROJECT_KEYWORDS] "
-            + "[" + PREFIX_SALARY + "SALARY_KEYWORDS] "
-            + "[" + PREFIX_RATING + "RATING_KEYWORDS] "
-            + "[" + PREFIX_GITHUBID + "GITHUBID_KEYWORDS]\n"
-            + "Example: " + COMMAND_WORD + " n/John r/developer\n";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Find developers based on various attributes.\n" + "Parameters: " + "[" + PREFIX_NAME
+                    + "NAME_KEYWORDS] " + "[" + PREFIX_ROLE + "ROLE_KEYWORDS] " + "[" + PREFIX_ADDRESS
+                    + "ADDRESS_KEYWORDS] " + "[" + PREFIX_DATEJOINED + "DATE_JOINED_KEYWORDS] " + "[" + PREFIX_EMAIL
+                    + "EMAIL_KEYWORDS] " + "[" + PREFIX_PHONE + "PHONE_KEYWORDS] " + "[" + PREFIX_PROJECT
+                    + "PROJECT_KEYWORDS] " + "[" + PREFIX_SALARY + "SALARY_KEYWORDS] " + "[" + PREFIX_RATING
+                    + "RATING_KEYWORDS] " + "[" + PREFIX_GITHUBID + "GITHUBID_KEYWORDS]\n" + "Example: " + COMMAND_WORD
+                    + " n/John r/developer\n";
 
     private Predicate<Developer> predicate;
 
@@ -72,9 +67,7 @@ public class FindDeveloperCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("predicate", predicate)
-                .toString();
+        return new ToStringBuilder(this).add("predicate", predicate).toString();
     }
 }
 

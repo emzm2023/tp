@@ -18,8 +18,7 @@ public class OrganisationContainsKeywordsPredicate implements KeywordPredicate<C
 
     @Override
     public boolean test(Client client) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(client.getOrganisation().toString(), keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(client.getOrganisation().toString(), keyword));
     }
 
     @Override

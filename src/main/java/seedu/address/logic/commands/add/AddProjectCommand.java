@@ -22,17 +22,13 @@ public class AddProjectCommand extends Command {
 
     public static final String COMMAND_WORD = "add-project";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a project to the address book.\n"
-            + Deadline.MESSAGE_CONSTRAINTS + "\n"
-            + "Parameters: "
-            + PREFIX_NAME + "NAME "
-            + PREFIX_DESCRIPTION + "DESCRIPTION "
-            + "[" + PREFIX_DEADLINE + "DEADLINE_DATE,DEADLINE_DESCRIPTION,PRIORITY,IS_DONE]...\n"
-            + "Example: \n" + COMMAND_WORD + " "
-            + PREFIX_NAME + "JuiceApp "
-            + PREFIX_DESCRIPTION + "App to allow for different juices to be ordered "
-            + PREFIX_DEADLINE + "19-12-2023,Design backend,HIGH,0 "
-            + PREFIX_DEADLINE + "25-12-2023,Design frontend,MEDIUM,0 ";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Adds a project to the address book.\n" + Deadline.MESSAGE_CONSTRAINTS + "\n"
+                    + "Parameters: " + PREFIX_NAME + "NAME " + PREFIX_DESCRIPTION + "DESCRIPTION " + "["
+                    + PREFIX_DEADLINE + "DEADLINE_DATE,DEADLINE_DESCRIPTION,PRIORITY,IS_DONE]...\n" + "Example: \n"
+                    + COMMAND_WORD + " " + PREFIX_NAME + "JuiceApp " + PREFIX_DESCRIPTION
+                    + "App to allow for different juices to be ordered " + PREFIX_DEADLINE
+                    + "19-12-2023,Design backend,HIGH,0 " + PREFIX_DEADLINE + "25-12-2023,Design frontend,MEDIUM,0 ";
 
     public static final String MESSAGE_SUCCESS = "New project added: %1$s";
     public static final String MESSAGE_DUPLICATE_PROJECT = "This project already exists in the address book";
@@ -79,8 +75,6 @@ public class AddProjectCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("toAdd", toAdd)
-                .toString();
+        return new ToStringBuilder(this).add("toAdd", toAdd).toString();
     }
 }

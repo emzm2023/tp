@@ -8,8 +8,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  * Guarantees: immutable; is valid as declared in {@link #isValidRating(String)}
  */
 public class Rating {
-    public static final String MESSAGE_CONSTRAINTS =
-            "Rating should be between 0.0 and 5.0";
+    public static final String MESSAGE_CONSTRAINTS = "Rating should be between 0.0 and 5.0";
     public static final String VALIDATION_REGEX = "[0-5](\\.[0-9]*)?";
     public final double rating;
 

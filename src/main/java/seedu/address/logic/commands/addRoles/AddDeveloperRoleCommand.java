@@ -16,9 +16,9 @@ import seedu.address.model.developer.DeveloperRoles;
 public class AddDeveloperRoleCommand extends Command {
     public static final String COMMAND_WORD = "add-developer-role";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a role for developers to the address book. "
-            + "Parameters: " + PREFIX_ROLE + "ROLE "
-            + "Example: " + PREFIX_ROLE + "Developer ";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Adds a role for developers to the address book. " + "Parameters: " + PREFIX_ROLE + "ROLE "
+                    + "Example: " + PREFIX_ROLE + "Developer ";
 
     public static final String MESSAGE_SUCCESS = "New role for developer added: %1$s";
     public static final String MESSAGE_DUPLICATE_DEVELOPER = "This developer role already exists in the address book";
@@ -65,8 +65,6 @@ public class AddDeveloperRoleCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("toAdd", toAdd)
-                .toString();
+        return new ToStringBuilder(this).add("toAdd", toAdd).toString();
     }
 }

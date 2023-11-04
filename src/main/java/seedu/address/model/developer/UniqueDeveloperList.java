@@ -101,16 +101,13 @@ public class UniqueDeveloperList implements Iterable<Developer> {
     }
 
     public void updateDeveloperProjects(String project) {
-        iterator().forEachRemaining(
-                developer -> {
-                    Set<String> newprojectset = new HashSet<>(developer.getProjects());
-                    newprojectset.remove(project);
-                    setDeveloper(developer, new Developer(developer.getName(), developer.getPhone(),
-                            developer.getEmail(),
-                            developer.getAddress(), developer.getRole(), newprojectset,
-                            developer.getSalary(), developer.getDateJoined(), developer.getGithubId(),
-                            developer.getRating()));
-                });
+        iterator().forEachRemaining(developer -> {
+            Set<String> newprojectset = new HashSet<>(developer.getProjects());
+            newprojectset.remove(project);
+            setDeveloper(developer, new Developer(developer.getName(), developer.getPhone(), developer.getEmail(),
+                    developer.getAddress(), developer.getRole(), newprojectset, developer.getSalary(),
+                    developer.getDateJoined(), developer.getGithubId(), developer.getRating()));
+        });
     }
 
     /**

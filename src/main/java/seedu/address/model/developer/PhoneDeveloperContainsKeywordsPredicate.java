@@ -18,8 +18,8 @@ public class PhoneDeveloperContainsKeywordsPredicate implements KeywordPredicate
 
     @Override
     public boolean test(Developer developer) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getPhone().value, keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getPhone().value,
+                keyword));
     }
 
     @Override

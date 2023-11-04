@@ -21,10 +21,9 @@ public class DeleteClientCommand extends Command {
 
     public static final String COMMAND_WORD = "delete-client";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Deletes the client identified by the index number used in the displayed client list.\n"
-            + "Parameters: INDEX (must be a positive integer)\n"
-            + "Example: " + COMMAND_WORD + " 1";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Deletes the client identified by the index number used in the displayed client list.\n"
+                    + "Parameters: INDEX (must be a positive integer)\n" + "Example: " + COMMAND_WORD + " 1";
 
     public static final String MESSAGE_DELETE_CLIENT_SUCCESS = "Deleted Client: %1$s";
 
@@ -69,8 +68,6 @@ public class DeleteClientCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("targetIndex", targetIndex)
-                .toString();
+        return new ToStringBuilder(this).add("targetIndex", targetIndex).toString();
     }
 }

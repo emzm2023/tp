@@ -23,12 +23,10 @@ public class FindProjectCommand extends Command {
 
     public static final String COMMAND_WORD = "find-project";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Find projects based on various attributes.\n"
-            + "Parameters: "
-            + "[" + PREFIX_PROJECT + "PROJECT_NAME_KEYWORDS] "
-            + "[" + PREFIX_DESCRIPTION + "DESCRIPTION_KEYWORDS] "
-            + "[" + PREFIX_DEADLINE + "DEADLINE_KEYWORDS]\n"
-            + "Example: " + COMMAND_WORD + " pr/MyProject\n";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Find projects based on various attributes.\n" + "Parameters: " + "[" + PREFIX_PROJECT
+                    + "PROJECT_NAME_KEYWORDS] " + "[" + PREFIX_DESCRIPTION + "DESCRIPTION_KEYWORDS] " + "["
+                    + PREFIX_DEADLINE + "DEADLINE_KEYWORDS]\n" + "Example: " + COMMAND_WORD + " pr/MyProject\n";
 
     private Predicate<Project> predicate;
 
@@ -63,8 +61,6 @@ public class FindProjectCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("predicate", predicate)
-                .toString();
+        return new ToStringBuilder(this).add("predicate", predicate).toString();
     }
 }

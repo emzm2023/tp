@@ -10,8 +10,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Salary {
 
 
-    public static final String MESSAGE_CONSTRAINTS =
-            "Salary should be at least 4 digits";
+    public static final String MESSAGE_CONSTRAINTS = "Salary should be at least 4 digits";
     public static final String VALIDATION_REGEX = "\\d{4,}";
     public final int salary;
 

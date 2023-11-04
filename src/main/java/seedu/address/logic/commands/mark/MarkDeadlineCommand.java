@@ -22,14 +22,14 @@ public class MarkDeadlineCommand extends Command {
     public static final String COMMAND_WORD = "mark-deadline";
     public static final String MESSAGE_SUCCESS = "The deadline has been marked as completed!";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Marks the specified deadline of the specified project "
-            + "as done. \n"
-            + "DEADLINE_INDEX must be a positive integer representing the index of the deadline in the displayed "
-            + "deadline table, and PROJECT_INDEX must be a positive integer which is the project's index number in the "
-            + "displayed project list. \n"
-            + "Parameters: "
-            + "PROJECT_INDEX DEADLINE_INDEX \n"
-            + "Example: " + COMMAND_WORD + " 1 2";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Marks the specified deadline of the specified project " + "as done. \n"
+                    + "DEADLINE_INDEX must be a positive integer representing the index of the deadline in the " 
+                    + "displayed "
+                    + "deadline table, and PROJECT_INDEX must be a positive integer which is the project's index " 
+                    + "number in the "
+                    + "displayed project list. \n" + "Parameters: " + "PROJECT_INDEX DEADLINE_INDEX \n" + "Example: "
+                    + COMMAND_WORD + " 1 2";
 
     private final Index deadlineIndex;
     private final Index projIndex;
@@ -56,9 +56,7 @@ public class MarkDeadlineCommand extends Command {
         EditProjectCommand edit;
 
         try {
-            edit = new EditProjectCommandParser().parse(editProjectArgs(
-                    projectToEdit.markDeadlineStringRep(deadlineIndex.getZeroBased()),
-                    projIndex.getOneBased()));
+            edit = new EditProjectCommandParser().parse(editProjectArgs(projectToEdit.markDeadlineStringRep(deadlineIndex.getZeroBased()), projIndex.getOneBased()));
         } catch (ParseException pe) {
             throw new CommandException(pe.getMessage());
         }
@@ -101,9 +99,6 @@ public class MarkDeadlineCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("deadlineIndex", deadlineIndex)
-                .add("projIndex", projIndex)
-                .toString();
+        return new ToStringBuilder(this).add("deadlineIndex", deadlineIndex).add("projIndex", projIndex).toString();
     }
 }

@@ -18,11 +18,11 @@ public class FindDeadlineCommand extends Command {
 
     public static final String COMMAND_WORD = "find-deadline";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Filter deadlines within projects.\n"
-            + "Parameters: "
-            + PREFIX_DATEJOINED + "DATE (Shows deadlines before this date) \n"
-            + "[" + PREFIX_PRIORITY + "[HIGH/MEDIUM/LOW] (Shows deadlines based on priority)\n"
-            + "Example: " + COMMAND_WORD + " d/2023-12-31 pri/HIGH\n";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Filter deadlines within projects.\n" + "Parameters: " + PREFIX_DATEJOINED
+                    + "DATE (Shows deadlines before this date) \n" + "[" + PREFIX_PRIORITY
+                    + "[HIGH/MEDIUM/LOW] (Shows deadlines based on priority)\n" + "Example: " + COMMAND_WORD
+                    + " d/2023-12-31 pri/HIGH\n";
 
     private final Predicate<Deadline> predicate;
 
@@ -58,8 +58,6 @@ public class FindDeadlineCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("predicate", predicate)
-                .toString();
+        return new ToStringBuilder(this).add("predicate", predicate).toString();
     }
 }

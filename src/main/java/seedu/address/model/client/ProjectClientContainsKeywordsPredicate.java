@@ -18,8 +18,7 @@ public class ProjectClientContainsKeywordsPredicate implements KeywordPredicate<
 
     @Override
     public boolean test(Client client) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(client.getProjects().toString(), keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(client.getProjects().toString(), keyword));
     }
 
     @Override

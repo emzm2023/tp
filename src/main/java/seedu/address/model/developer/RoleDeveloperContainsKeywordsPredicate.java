@@ -19,8 +19,8 @@ public class RoleDeveloperContainsKeywordsPredicate implements KeywordPredicate<
 
     @Override
     public boolean test(Developer developer) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getRole().toString(), keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getRole().toString()
+                , keyword));
     }
 
     @Override

@@ -42,23 +42,16 @@ public class EditClientCommand extends Command {
     public static final String COMMAND_WORD = "edit-client";
     public static final String MESSAGE_EDIT_CLIENT_SUCCESS = "Edited Client: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_CLIENT = "The details of the client in the address book are already " +
-            "as given.";
+    public static final String MESSAGE_DUPLICATE_CLIENT =
+            "The details of the client in the address book are already " + "as given.";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the client identified "
             + "by the index number used in the displayed client list. "
             + "Existing values will be overwritten by the input values.\n"
-            + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_NAME + "NAME] "
-            + "[" + PREFIX_PHONE + "PHONE] "
-            + "[" + PREFIX_EMAIL + "EMAIL] "
-            + "[" + PREFIX_ADDRESS + "ADDRESS] "
-            + "[" + PREFIX_ROLE + "ROLE] "
-            + "[" + PREFIX_PROJECT + "PROJECT]...\n"
-            + "[" + PREFIX_ORGANISATION + "ORGANISATION] "
-            + "[" + PREFIX_DOCUMENT + "DOCUMENT] "
-            + "Example: \n" + COMMAND_WORD + " 1 "
-            + PREFIX_PHONE + "91234567 "
+            + "Parameters: INDEX (must be a positive integer) " + "[" + PREFIX_NAME + "NAME] " + "[" + PREFIX_PHONE
+            + "PHONE] " + "[" + PREFIX_EMAIL + "EMAIL] " + "[" + PREFIX_ADDRESS + "ADDRESS] " + "[" + PREFIX_ROLE
+            + "ROLE] " + "[" + PREFIX_PROJECT + "PROJECT]...\n" + "[" + PREFIX_ORGANISATION + "ORGANISATION] " + "["
+            + PREFIX_DOCUMENT + "DOCUMENT] " + "Example: \n" + COMMAND_WORD + " 1 " + PREFIX_PHONE + "91234567 "
             + PREFIX_EMAIL + "johndoe@example.com";
 
     private final Index index;
@@ -94,8 +87,8 @@ public class EditClientCommand extends Command {
         Name updatedOrganisation = editClientDescriptor.getOrganisation().orElse(clientToEdit.getOrganisation());
         Document updatedDocument = editClientDescriptor.getDocument().orElse(clientToEdit.getDocument());
 
-        return new Client(updatedName, updatedPhone, updatedEmail, updatedAddress,
-                updatedRole, updatedProjects, updatedOrganisation, updatedDocument);
+        return new Client(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedRole, updatedProjects,
+                updatedOrganisation, updatedDocument);
     }
 
     @Override
@@ -145,10 +138,7 @@ public class EditClientCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("index", index)
-                .add("editClientDescriptor", editClientDescriptor)
-                .toString();
+        return new ToStringBuilder(this).add("index", index).add("editClientDescriptor", editClientDescriptor).toString();
     }
 
     /**
@@ -187,8 +177,7 @@ public class EditClientCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(
-                    name, phone, email, address, projects, role, organisation, document);
+            return CollectionUtil.isAnyNonNull(name, phone, email, address, projects, role, organisation, document);
         }
 
         public Optional<Name> getName() {
@@ -278,16 +267,9 @@ public class EditClientCommand extends Command {
 
         @Override
         public String toString() {
-            return new ToStringBuilder(this)
-                    .add("name", name)
-                    .add("phone", phone)
-                    .add("email", email)
-                    .add("address", address)
-                    .add("projects", projects)
-                    .add("role", role)
-                    .add("organisation", organisation)
-                    .add("document", document)
-                    .toString();
+            return new ToStringBuilder(this).add("name", name).add("phone", phone).add("email", email).add("address",
+                    address).add("projects", projects).add("role", role).add("organisation", organisation).add(
+                            "document", document).toString();
         }
     }
 }

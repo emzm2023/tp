@@ -31,9 +31,9 @@ public class JsonAdaptedClient {
     private final String document;
 
     @JsonCreator
-    public JsonAdaptedClient(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
-                             @JsonProperty("email") String email, @JsonProperty("address") String address,
-                             @JsonProperty("role") String role, @JsonProperty("projects") List<String> projects,
+    public JsonAdaptedClient(@JsonProperty("name") String name, @JsonProperty("phone") String phone, @JsonProperty(
+            "email") String email, @JsonProperty("address") String address, @JsonProperty("role") String role,
+                             @JsonProperty("projects") List<String> projects,
                              @JsonProperty("organisation") String organisation,
                              @JsonProperty("document") String document) {
         this.name = name;

@@ -20,8 +20,7 @@ public class RatingContainsKeywordsPredicate implements KeywordPredicate<Develop
     public boolean test(Developer developer) {
         // Assuming Developer has a getRating() method that returns a Rating object
         // and the Rating object has a toString() method that returns its string representation.
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getRating().toString(), keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getRating().toString(), keyword));
     }
 
     @Override

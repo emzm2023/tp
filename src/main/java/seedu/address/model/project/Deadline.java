@@ -14,8 +14,8 @@ import seedu.address.model.commons.Date;
  */
 public class Deadline {
     public static final String MESSAGE_CONSTRAINTS =
-            "Deadline should be of the format dd-MM-yyyy,<DESCRIPTION>,<HIGH|MEDIUM|LOW>,<0|1>\n" +
-                    "Eg: 31-12-2019,Develop front end interface,HIGH,0";
+            "Deadline should be of the format dd-MM-yyyy,<DESCRIPTION>,<HIGH|MEDIUM|LOW>,<0|1>\n"
+                    + "Eg: 31-12-2019,Develop front end interface,HIGH,0";
     public static final String VALIDATION_REGEX = "^[0-3]\\d-[01]\\d-\\d{4},[^,]+,(HIGH|MEDIUM|LOW),(0|1)$";
 
     private final Date date;
@@ -43,8 +43,7 @@ public class Deadline {
      * Returns true if a given string is a valid date.
      */
     public static boolean isValidDeadline(String text) {
-        if (text == null || !text.matches(VALIDATION_REGEX))
-            return false;
+        if (text == null || !text.matches(VALIDATION_REGEX)) return false;
         return true;
     }
 
@@ -76,8 +75,7 @@ public class Deadline {
         }
 
         Deadline otherDeadline = (Deadline) other;
-        return date.equals(otherDeadline.date)
-                && desc.equals(otherDeadline.desc)
+        return date.equals(otherDeadline.date) && desc.equals(otherDeadline.desc)
                 && priority.equals(otherDeadline.priority);
     }
 
@@ -115,12 +113,8 @@ public class Deadline {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("index", num)
-                .add("date", date)
-                .add("description", desc)
-                .add("priority", priority)
-                .toString();
+        return new ToStringBuilder(this).add("index", num).add("date", date).add("description", desc).add("priority",
+                priority).toString();
     }
 
     public boolean getIsDone() {

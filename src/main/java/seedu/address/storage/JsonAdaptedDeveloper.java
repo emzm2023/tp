@@ -45,9 +45,8 @@ class JsonAdaptedDeveloper {
     public JsonAdaptedDeveloper(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
                                 @JsonProperty("email") String email, @JsonProperty("address") String address,
                                 @JsonProperty("dateJoined") String dateJoined, @JsonProperty("role") String role,
-                                @JsonProperty("salary") String salary,
-                                @JsonProperty("projects") List<String> tags, @JsonProperty("githubId") String githubId,
-                                @JsonProperty("rating") String rating) {
+                                @JsonProperty("salary") String salary, @JsonProperty("projects") List<String> tags,
+                                @JsonProperty("githubId") String githubId, @JsonProperty("rating") String rating) {
         this.name = name;
         this.phone = phone;
         this.email = email;

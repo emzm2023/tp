@@ -19,8 +19,7 @@ public class GithubIdContainsKeywordsPredicate implements KeywordPredicate<Devel
     @Override
     public boolean test(Developer developer) {
         // Assuming Developer has a getGithubId() method that returns the Github ID as a String.
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getGithubId().toString(), keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getGithubId().toString(), keyword));
     }
 
     @Override

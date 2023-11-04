@@ -24,8 +24,8 @@ public class DeleteClientCommandParser implements Parser<DeleteClientCommand> {
             Index index = ParserUtil.parseIndex(args);
             return new DeleteClientCommand(index);
         } catch (ParseException pe) {
-            throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteClientCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteClientCommand.MESSAGE_USAGE)
+                    , pe);
         }
     }
 

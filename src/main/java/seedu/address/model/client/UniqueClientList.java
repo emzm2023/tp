@@ -112,14 +112,12 @@ public class UniqueClientList implements Iterable<Client> {
     }
 
     public void updateClientProjects(String project) {
-        iterator().forEachRemaining(
-                client -> {
-                    Set<String> newprojectset = new HashSet<>(client.getProjects());
-                    newprojectset.remove(project);
-                    setClient(client, new Client(client.getName(), client.getPhone(), client.getEmail(),
-                            client.getAddress(), client.getRole(), newprojectset,
-                            client.getOrganisation(), client.getDocument()));
-                });
+        iterator().forEachRemaining(client -> {
+            Set<String> newprojectset = new HashSet<>(client.getProjects());
+            newprojectset.remove(project);
+            setClient(client, new Client(client.getName(), client.getPhone(), client.getEmail(), client.getAddress(),
+                    client.getRole(), newprojectset, client.getOrganisation(), client.getDocument()));
+        });
     }
 
     @Override

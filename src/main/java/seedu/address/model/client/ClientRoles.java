@@ -18,8 +18,8 @@ import seedu.address.model.Model;
  * Guarantees: immutable; is valid as declared in {@link #isValidRole(String)}
  */
 public class ClientRoles {
-    public static final String NO_SUCH_CLIENT_ROLE = "There is no such client role, "
-            + "please create role before proceeding";
+    public static final String NO_SUCH_CLIENT_ROLE =
+            "There is no such client role, " + "please create role before proceeding";
     private static List<ClientRoles> roles = new ArrayList<>();
     private static boolean noRepeat;
     private static boolean notDefault;
@@ -88,9 +88,7 @@ public class ClientRoles {
         }
 
         // check if this role is one of the defaults
-        if (role.equalsIgnoreCase("Manager")
-                || role.equalsIgnoreCase("Developer")
-                || role.equalsIgnoreCase("HR")
+        if (role.equalsIgnoreCase("Manager") || role.equalsIgnoreCase("Developer") || role.equalsIgnoreCase("HR")
                 || role.equalsIgnoreCase("Client")) {
             notDefault = false;
         } else {

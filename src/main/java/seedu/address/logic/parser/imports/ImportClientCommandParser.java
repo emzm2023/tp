@@ -79,10 +79,9 @@ public class ImportClientCommandParser implements Parser<ImportClientCommand> {
     //                  Name organisation, Document document
     private boolean checkColumnNames(String line) {
         String[] columnNames = line.split(",");
-        return columnNames.length == 8 && columnNames[0].contains("Name") &&
-                columnNames[1].contains("Contact Number") && columnNames[2].contains("Email") &&
-                columnNames[3].contains("Address") && columnNames[4].contains("Role") &&
-                columnNames[5].contains("Organisation") && columnNames[6].contains("Document") &&
-                columnNames[7].contains("Projects");
+        return columnNames.length == 8 && columnNames[0].contains("Name") && columnNames[1].contains("Contact Number")
+                && columnNames[2].contains("Email") && columnNames[3].contains("Address")
+                && columnNames[4].contains("Role") && columnNames[5].contains("Organisation")
+                && columnNames[6].contains("Document") && columnNames[7].contains("Projects");
     }
 }

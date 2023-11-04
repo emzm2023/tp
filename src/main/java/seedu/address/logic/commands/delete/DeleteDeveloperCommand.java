@@ -23,8 +23,7 @@ public class DeleteDeveloperCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Deletes the developer identified by the index number used in the displayed developer list.\n"
-            + "Parameters: INDEX (must be a positive integer)\n"
-            + "Example: " + COMMAND_WORD + " 1";
+            + "Parameters: INDEX (must be a positive integer)\n" + "Example: " + COMMAND_WORD + " 1";
 
     public static final String MESSAGE_DELETE_DEVELOPER_SUCCESS = "Deleted Developer: %1$s";
 
@@ -69,8 +68,6 @@ public class DeleteDeveloperCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("targetIndex", targetIndex)
-                .toString();
+        return new ToStringBuilder(this).add("targetIndex", targetIndex).toString();
     }
 }

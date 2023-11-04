@@ -71,8 +71,7 @@ public class Person {
             return true;
         }
 
-        return otherPerson != null
-                && otherPerson.getName().equals(getName());
+        return otherPerson != null && otherPerson.getName().equals(getName());
     }
 
     /**
@@ -91,11 +90,8 @@ public class Person {
         }
 
         Person otherPerson = (Person) other;
-        return name.equals(otherPerson.name)
-                && phone.equals(otherPerson.phone)
-                && email.equals(otherPerson.email)
-                && address.equals(otherPerson.address)
-                && projects.equals(otherPerson.projects);
+        return name.equals(otherPerson.name) && phone.equals(otherPerson.phone) && email.equals(otherPerson.email)
+                && address.equals(otherPerson.address) && projects.equals(otherPerson.projects);
     }
 
     @Override
@@ -106,13 +102,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("name", name)
-                .add("phone", phone)
-                .add("email", email)
-                .add("address", address)
-                .add("projects", projects)
-                .toString();
+        return new ToStringBuilder(this).add("name", name).add("phone", phone).add("email", email).add("address",
+                address).add("projects", projects).toString();
     }
 
 }

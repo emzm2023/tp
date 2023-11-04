@@ -63,8 +63,8 @@ public class AddDeveloperCommandParser implements Parser<AddDeveloperCommand> {
                 PREFIX_ADDRESS, PREFIX_PROJECT, PREFIX_DATEJOINED, PREFIX_ROLE, PREFIX_SALARY, PREFIX_GITHUBID,
                 PREFIX_RATING, PREFIX_ORGANISATION, PREFIX_DOCUMENT, PREFIX_DESCRIPTION, PREFIX_DEADLINE);
 
-        if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_ADDRESS, PREFIX_PHONE, PREFIX_EMAIL,
-                PREFIX_SALARY, PREFIX_ROLE)
+        if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_ADDRESS, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_SALARY,
+                PREFIX_ROLE)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddDeveloperCommand.MESSAGE_USAGE));
         }
@@ -81,16 +81,17 @@ public class AddDeveloperCommandParser implements Parser<AddDeveloperCommand> {
         Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
-        Date dateJoined = ParserUtil.parseDateJoined(argMultimap.getValue(PREFIX_DATEJOINED)
-                .orElse(new SimpleDateFormat("dd-MM-yyyy").format(new java.util.Date())));
+        Date dateJoined =
+                ParserUtil.parseDateJoined(argMultimap.getValue(PREFIX_DATEJOINED).orElse(new SimpleDateFormat("dd-MM" 
+                        + "-yyyy").format(new java.util.Date())));
         DeveloperRoles role = ParserUtil.parseDeveloperRole(argMultimap.getValue(PREFIX_ROLE).get());
         Salary salary = ParserUtil.parseSalary(argMultimap.getValue(PREFIX_SALARY).get());
         Set<String> projectList = ParserUtil.parseProjectsToSet(argMultimap.getAllValues(PREFIX_PROJECT));
         GithubId githubId = ParserUtil.parseGithubId(argMultimap.getValue(PREFIX_GITHUBID).orElse(""));
         Rating rating = ParserUtil.parseRating(argMultimap.getValue(PREFIX_RATING).orElse("0"));
 
-        Developer developer = new Developer(name, phone, email, address, role, projectList, salary,
-                dateJoined, githubId, rating);
+        Developer developer = new Developer(name, phone, email, address, role, projectList, salary, dateJoined,
+                githubId, rating);
 
         return new AddDeveloperCommand(developer);
     }

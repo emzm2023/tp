@@ -18,8 +18,7 @@ public class DateJoinedContainsKeywordsPredicate implements KeywordPredicate<Dev
 
     @Override
     public boolean test(Developer developer) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getDateJoined().toString(), keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getDateJoined().toString(), keyword));
     }
 
     @Override

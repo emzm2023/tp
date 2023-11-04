@@ -20,7 +20,6 @@ public class ChangePasswordCommandParser implements Parser<ChangePasswordCommand
             String newPw = ParserUtil.parsePassword(argMultimap.getValue(PREFIX_NEW_PASSWORD).get());
             return new ChangePasswordCommand(currentPw, newPw);
         }
-        throw new ParseException(
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, ChangePasswordCommand.MESSAGE_USAGE));
+        throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ChangePasswordCommand.MESSAGE_USAGE));
     }
 }

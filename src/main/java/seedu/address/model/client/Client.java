@@ -58,8 +58,7 @@ public class Client extends Person {
             return true;
         }
 
-        return otherClient != null
-                && otherClient.getName().equals(getName());
+        return otherClient != null && otherClient.getName().equals(getName());
     }
 
     @Override

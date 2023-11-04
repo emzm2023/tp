@@ -72,18 +72,15 @@ public class ProjectCard extends UiPart<Region> {
         description.setText(project.getProjectDescription().desc);
         TableColumn dateCol = new TableColumn("Date");
         dateCol.setMinWidth(95);
-        dateCol.setCellValueFactory(
-                new PropertyValueFactory<>("date"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
 
         TableColumn descriptionCol = new TableColumn("Description");
         descriptionCol.setMinWidth(260);
-        descriptionCol.setCellValueFactory(
-                new PropertyValueFactory<>("description"));
+        descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
 
         TableColumn priorityCol = new TableColumn("Priority");
         priorityCol.setMinWidth(95);
-        priorityCol.setCellValueFactory(
-                new PropertyValueFactory<>("priority"));
+        priorityCol.setCellValueFactory(new PropertyValueFactory<>("priority"));
         priorityCol.setCellFactory(column -> new TableCell<ProjectCard, String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -140,20 +137,18 @@ public class ProjectCard extends UiPart<Region> {
             }
 
         });
-        doneCol.setCellValueFactory(
-                new PropertyValueFactory<>("isDone"));
+        doneCol.setCellValueFactory(new PropertyValueFactory<>("isDone"));
         TableColumn indexCol = new TableColumn("#");
         indexCol.setMinWidth(20);
-        indexCol.setCellValueFactory(
-                new PropertyValueFactory<>("index"));
+        indexCol.setCellValueFactory(new PropertyValueFactory<>("index"));
         table.getColumns().addAll(indexCol, doneCol, priorityCol, dateCol, descriptionCol);
-        ObservableList<Data> data = FXCollections.observableList(project.getProjectFilteredDeadlines().stream()
-                .map(deadline -> new Data(deadline)).collect(Collectors.toList()));
+        ObservableList<Data> data =
+                FXCollections.observableList(project.getProjectFilteredDeadlines().stream().map(deadline -> new Data(deadline)).collect(Collectors.toList()));
         project.getProjectFilteredDeadlines().addListener(new ListChangeListener<Deadline>() {
             @Override
             public void onChanged(Change<? extends Deadline> c) {
-                ObservableList<Data> data = FXCollections.observableList(project.getProjectFilteredDeadlines().stream()
-                        .map(deadline -> new Data(deadline)).collect(Collectors.toList()));
+                ObservableList<Data> data =
+                        FXCollections.observableList(project.getProjectFilteredDeadlines().stream().map(deadline -> new Data(deadline)).collect(Collectors.toList()));
                 progress.setProgress(data.stream().filter(t -> t.getIsDone()).count() * 1.0 / data.size());
                 table.setItems(data);
             }

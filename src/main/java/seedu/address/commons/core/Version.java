@@ -46,8 +46,7 @@ public class Version implements Comparable<Version> {
             throw new IllegalArgumentException(String.format(EXCEPTION_STRING_NOT_VERSION, versionString));
         }
 
-        return new Version(Integer.parseInt(versionMatcher.group(1)),
-                Integer.parseInt(versionMatcher.group(2)),
+        return new Version(Integer.parseInt(versionMatcher.group(1)), Integer.parseInt(versionMatcher.group(2)),
                 Integer.parseInt(versionMatcher.group(3)),
                 versionMatcher.group(4) == null ? false : true);
     }
@@ -105,9 +104,7 @@ public class Version implements Comparable<Version> {
         }
 
         Version otherVersion = (Version) other;
-        return major == otherVersion.major
-                && minor == otherVersion.minor
-                && patch == otherVersion.patch
+        return major == otherVersion.major && minor == otherVersion.minor && patch == otherVersion.patch
                 && isEarlyAccess == otherVersion.isEarlyAccess;
     }
 

@@ -19,8 +19,8 @@ public class AddressDeveloperContainsKeywordsPredicate implements KeywordPredica
 
     @Override
     public boolean test(Developer developer) {
-        return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getAddress().value, keyword));
+        return keywords.stream().anyMatch(keyword -> StringUtil.containsWordIgnoreCase(developer.getAddress().value,
+                keyword));
     }
 
     @Override

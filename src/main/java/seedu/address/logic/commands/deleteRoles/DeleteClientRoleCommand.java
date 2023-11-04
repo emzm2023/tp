@@ -16,13 +16,13 @@ import seedu.address.model.client.ClientRoles;
 public class DeleteClientRoleCommand extends Command {
     public static final String COMMAND_WORD = "delete-client-role";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Delete a role for clients in the address book. "
-            + "Parameters: " + PREFIX_ROLE + "ROLE "
-            + "Example: " + PREFIX_ROLE + "Developer ";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Delete a role for clients in the address book. " + "Parameters: " + PREFIX_ROLE + "ROLE "
+                    + "Example: " + PREFIX_ROLE + "Developer ";
 
     public static final String MESSAGE_SUCCESS = "Role for client deleted: %1$s";
-    public static final String MESSAGE_CANNOT_DELETE_REPEAT = "This client role cannot be deleted "
-            + "as there are clients of this role";
+    public static final String MESSAGE_CANNOT_DELETE_REPEAT =
+            "This client role cannot be deleted " + "as there are clients of this role";
     public static final String MESSAGE_CANNOT_DELETE_PREXISTS = "You are not allowed to delete this client role.";
     public static final String MESSAGE_CANNOT_DELETE_NONEXISTING = "This client role does not exist. ";
     public static final String MESSAGE_EXISTING_CLIENT_ROLES = "These are the existing client roles: \n";
@@ -47,8 +47,8 @@ public class DeleteClientRoleCommand extends Command {
             } else if (!ClientRoles.isNotDefault()) {
                 throw new CommandException(MESSAGE_CANNOT_DELETE_PREXISTS);
             } else if (ClientRoles.isNotInList()) {
-                throw new CommandException(MESSAGE_CANNOT_DELETE_NONEXISTING + MESSAGE_EXISTING_CLIENT_ROLES
-                        + ClientRoles.printRoles());
+                throw new CommandException(
+                        MESSAGE_CANNOT_DELETE_NONEXISTING + MESSAGE_EXISTING_CLIENT_ROLES + ClientRoles.printRoles());
             }
         }
 
@@ -77,8 +77,6 @@ public class DeleteClientRoleCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("toAdd", toAdd)
-                .toString();
+        return new ToStringBuilder(this).add("toAdd", toAdd).toString();
     }
 }

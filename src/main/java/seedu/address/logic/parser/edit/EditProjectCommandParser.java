@@ -98,8 +98,8 @@ public class EditProjectCommandParser implements Parser<EditProjectCommand> {
         if (deadlines.isEmpty()) {
             return Optional.empty();
         }
-        Collection<String> deadlineSet = deadlines.size() == 1 && deadlines.contains("") ? Collections.emptySet() :
-                deadlines;
+        Collection<String> deadlineSet =
+                deadlines.size() == 1 && deadlines.contains("") ? Collections.emptySet() : deadlines;
         return Optional.of(ParserUtil.parseDeadlines(deadlineSet));
     }
 }

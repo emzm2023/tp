@@ -153,8 +153,8 @@ public class MainApp extends Application {
             }
             initializedPrefs = prefsOptional.orElse(new UserPrefs());
         } catch (DataLoadingException e) {
-            logger.warning("Preference file at " + prefsFilePath + " could not be loaded."
-                    + " Using default preferences.");
+            logger.warning(
+                    "Preference file at " + prefsFilePath + " could not be loaded." + " Using default preferences.");
             initializedPrefs = new UserPrefs();
         }
 

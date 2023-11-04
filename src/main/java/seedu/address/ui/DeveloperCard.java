@@ -98,11 +98,9 @@ public class DeveloperCard extends UiPart<Region> {
         // Extract years and months from the period
         int years = period.getYears();
         int months = period.getMonths();
-        dateJoined.setText("Date Joined: " + dateFormat.format(joined) + "\n(" + years + " years " + months + " " +
-                "months)");
+        dateJoined.setText(
+                "Date Joined: " + dateFormat.format(joined) + "\n(" + years + " years " + months + " " + "months)");
         salary.setText("Salary: $" + developer.getSalary().salary);
-        developer.getProjects().stream()
-                .sorted(Comparator.comparing(tag -> tag))
-                .forEach(tag -> tags.getChildren().add(new Label(tag)));
+        developer.getProjects().stream().sorted(Comparator.comparing(tag -> tag)).forEach(tag -> tags.getChildren().add(new Label(tag)));
     }
 }

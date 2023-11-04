@@ -23,17 +23,13 @@ import seedu.address.model.client.Client;
 public class FindClientCommand extends Command {
 
     public static final String COMMAND_WORD = "find-client";
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Find clients based on various attributes.\n"
-            + "Parameters: "
-            + "[" + PREFIX_NAME + "NAME_KEYWORDS] "
-            + "[" + PREFIX_ROLE + "ROLE_KEYWORDS] "
-            + "[" + PREFIX_ADDRESS + "ADDRESS_KEYWORDS] "
-            + "[" + PREFIX_EMAIL + "EMAIL_KEYWORDS] "
-            + "[" + PREFIX_PHONE + "PHONE_KEYWORDS] "
-            + "[" + PREFIX_PROJECT + "PROJECT_KEYWORDS] "
-            + "[" + PREFIX_DOCUMENT + "DOCUMENT_KEYWORDS] "
-            + "[" + PREFIX_ORGANISATION + "ORGANISATION_KEYWORDS]\n"
-            + "Example: " + COMMAND_WORD + " n/John r/client\n";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Find clients based on various attributes.\n" + "Parameters: " + "[" + PREFIX_NAME
+                    + "NAME_KEYWORDS] " + "[" + PREFIX_ROLE + "ROLE_KEYWORDS] " + "[" + PREFIX_ADDRESS
+                    + "ADDRESS_KEYWORDS] " + "[" + PREFIX_EMAIL + "EMAIL_KEYWORDS] " + "[" + PREFIX_PHONE
+                    + "PHONE_KEYWORDS] " + "[" + PREFIX_PROJECT + "PROJECT_KEYWORDS] " + "[" + PREFIX_DOCUMENT
+                    + "DOCUMENT_KEYWORDS] " + "[" + PREFIX_ORGANISATION + "ORGANISATION_KEYWORDS]\n" + "Example: "
+                    + COMMAND_WORD + " n/John r/client\n";
 
     private Predicate<Client> predicate;
 
@@ -68,9 +64,7 @@ public class FindClientCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("predicate", predicate)
-                .toString();
+        return new ToStringBuilder(this).add("predicate", predicate).toString();
     }
 }
 

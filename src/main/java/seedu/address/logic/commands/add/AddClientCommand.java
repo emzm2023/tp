@@ -28,26 +28,15 @@ public class AddClientCommand extends Command {
     //Name name, Phone phone, Email email, Address address, Role role, Set<String> projects,
     //                  Name organisation, Document document
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a client to the address book. "
-            + "\n Parameters: "
-            + PREFIX_NAME + "NAME "
-            + PREFIX_PHONE + "PHONE "
-            + PREFIX_EMAIL + "EMAIL "
-            + PREFIX_ADDRESS + "ADDRESS "
-            + PREFIX_ROLE + "ROLE "
-            + "[" + PREFIX_PROJECT + "PROJECT]...\n"
-            + PREFIX_ORGANISATION + "ORGANISATION "
-            + PREFIX_DOCUMENT + "DOCUMENT \n"
-            + "Example: \n" + COMMAND_WORD + " "
-            + PREFIX_NAME + "John Doe "
-            + PREFIX_PHONE + "98765432 "
-            + PREFIX_EMAIL + "johnd@example.com "
-            + PREFIX_ADDRESS + "311, Clementi Ave 2, #02-25 "
-            + PREFIX_ROLE + "Developer "
-            + PREFIX_PROJECT + "AndroidApp "
-            + PREFIX_PROJECT + "CustomWebsite "
-            + PREFIX_ORGANISATION + "Google "
-            + PREFIX_DOCUMENT + "google.com ";
+    public static final String MESSAGE_USAGE =
+            COMMAND_WORD + ": Adds a client to the address book. " + "\n Parameters: " + PREFIX_NAME + "NAME "
+                    + PREFIX_PHONE + "PHONE " + PREFIX_EMAIL + "EMAIL " + PREFIX_ADDRESS + "ADDRESS " + PREFIX_ROLE
+                    + "ROLE " + "[" + PREFIX_PROJECT + "PROJECT]...\n" + PREFIX_ORGANISATION + "ORGANISATION "
+                    + PREFIX_DOCUMENT + "DOCUMENT \n" + "Example: \n" + COMMAND_WORD + " " + PREFIX_NAME + "John Doe "
+                    + PREFIX_PHONE + "98765432 " + PREFIX_EMAIL + "johnd@example.com " + PREFIX_ADDRESS
+                    + "311, Clementi Ave 2, #02-25 " + PREFIX_ROLE + "Developer " + PREFIX_PROJECT + "AndroidApp "
+                    + PREFIX_PROJECT + "CustomWebsite " + PREFIX_ORGANISATION + "Google " + PREFIX_DOCUMENT
+                    + "google.com ";
 
     public static final String MESSAGE_SUCCESS = "New client added: %1$s";
     public static final String MESSAGE_DUPLICATE_CLIENT = "This client already exists in the address book";
@@ -100,8 +89,6 @@ public class AddClientCommand extends Command {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .add("toAdd", toAdd)
-                .toString();
+        return new ToStringBuilder(this).add("toAdd", toAdd).toString();
     }
 }
