@@ -18,13 +18,21 @@ import seedu.address.model.Model;
  * Guarantees: immutable; is valid as declared in {@link #isValidRole(String)}
  */
 public class ClientRoles {
-    private static List<ClientRoles> roles = new ArrayList<>();
     public static final String NO_SUCH_CLIENT_ROLE = "There is no such client role, "
             + "please create role before proceeding";
+    private static List<ClientRoles> roles = new ArrayList<>();
     private static boolean noRepeat;
     private static boolean notDefault;
     private static boolean notInList;
     private static String listOfRoles;
+
+    static {
+        roles.add(new ClientRoles("Manager"));
+        roles.add(new ClientRoles("Developer"));
+        roles.add(new ClientRoles("HR"));
+        roles.add(new ClientRoles("Client"));
+        loadClientRoles();
+    }
 
     public final String role;
 
@@ -36,14 +44,6 @@ public class ClientRoles {
     public ClientRoles(String role) {
         requireNonNull(role);
         this.role = role;
-    }
-
-    static {
-        roles.add(new ClientRoles("Manager"));
-        roles.add(new ClientRoles("Developer"));
-        roles.add(new ClientRoles("HR"));
-        roles.add(new ClientRoles("Client"));
-        loadClientRoles();
     }
 
     public static void addClientRole(ClientRoles role) {

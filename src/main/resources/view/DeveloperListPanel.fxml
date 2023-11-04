@@ -2,7 +2,11 @@
 
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.VBox?>
+<<<<<<< HEAD
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+    >>>>>>> master
     <ListView fx:id="developerListView" VBox.vgrow="ALWAYS"/>
 </VBox>
 

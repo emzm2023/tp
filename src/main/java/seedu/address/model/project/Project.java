@@ -30,7 +30,6 @@ import seedu.address.model.commons.Name;
  * Guarantees: immutable; fields are validated.
  */
 public class Project {
-
     private final Name projectName;
     private final Description description;
     private final List<Deadline> deadlines;
@@ -56,12 +55,12 @@ public class Project {
         this.filteredDeadlines = new FilteredList<>(FXCollections.observableList(deadlines));
     }
 
-    public void setPredicate(Predicate<Deadline> predicate) {
-        filteredDeadlines.setPredicate(predicate);
-    }
-
     public Project(String projectName) {
         this(new Name(projectName), new Description(""), new ArrayList<>());
+    }
+
+    public void setPredicate(Predicate<Deadline> predicate) {
+        filteredDeadlines.setPredicate(predicate);
     }
 
     public String getName() {

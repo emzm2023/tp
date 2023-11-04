@@ -1,19 +1,5 @@
 package seedu.address.logic.commands;
 
-import static java.util.Objects.requireNonNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalPersons.ALICE;
-
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.function.Predicate;
-
-import org.junit.jupiter.api.Test;
-
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.logic.Messages;
@@ -29,6 +15,18 @@ import seedu.address.model.person.Person;
 import seedu.address.model.project.Deadline;
 import seedu.address.model.project.Project;
 import seedu.address.testutil.DeveloperBuilder;
+
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.function.Predicate;
+
+import org.junit.jupiter.api.Test;
+
+import static java.util.Objects.requireNonNull;
+import static org.junit.jupiter.api.Assertions.*;
+import static seedu.address.testutil.Assert.assertThrows;
+import static seedu.address.testutil.TypicalPersons.ALICE;
 
 public class AddDeveloperCommandTest {
 
@@ -94,12 +92,12 @@ public class AddDeveloperCommandTest {
      */
     private class ModelStub implements Model {
         @Override
-        public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
+        public ReadOnlyUserPrefs getUserPrefs() {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public ReadOnlyUserPrefs getUserPrefs() {
+        public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -129,22 +127,22 @@ public class AddDeveloperCommandTest {
         }
 
         @Override
-        public void addClient (Client person) {
+        public void addClient(Client person) {
 
         }
 
         @Override
-        public void addProject (Project person) {
+        public void addProject(Project person) {
 
-        }
-
-        @Override
-        public void setAddressBook(ReadOnlyAddressBook newData) {
-            throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public ReadOnlyAddressBook getAddressBook() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void setAddressBook(ReadOnlyAddressBook newData) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -154,17 +152,17 @@ public class AddDeveloperCommandTest {
         }
 
         @Override
-        public boolean hasClient (Client client) {
+        public boolean hasClient(Client client) {
             return false;
         }
 
         @Override
-        public boolean hasProject (Project project) {
+        public boolean hasProject(Project project) {
             return false;
         }
 
         @Override
-        public String areProjectsValid (Person person) {
+        public String areProjectsValid(Person person) {
             return null;
         }
 
@@ -174,12 +172,12 @@ public class AddDeveloperCommandTest {
         }
 
         @Override
-        public void deleteClient (Client target) {
+        public void deleteClient(Client target) {
 
         }
 
         @Override
-        public void deleteProject (Project target) {
+        public void deleteProject(Project target) {
 
         }
 
@@ -189,12 +187,12 @@ public class AddDeveloperCommandTest {
         }
 
         @Override
-        public void setClient (Client target, Client editedClient) {
+        public void setClient(Client target, Client editedClient) {
 
         }
 
         @Override
-        public void setProject (Project target, Project editedProject) {
+        public void setProject(Project target, Project editedProject) {
 
         }
 
@@ -204,12 +202,12 @@ public class AddDeveloperCommandTest {
         }
 
         @Override
-        public ObservableList<Client> getFilteredClientList () {
+        public ObservableList<Client> getFilteredClientList() {
             return null;
         }
 
         @Override
-        public ObservableList<Project> getFilteredProjectList () {
+        public ObservableList<Project> getFilteredProjectList() {
             return null;
         }
 
@@ -219,42 +217,42 @@ public class AddDeveloperCommandTest {
         }
 
         @Override
-        public void updateFilteredClientList (Predicate<Client> predicate) {
+        public void updateFilteredClientList(Predicate<Client> predicate) {
 
         }
 
         @Override
-        public void updateFilteredProjectList (Predicate<Project> predicate) {
+        public void updateFilteredProjectList(Predicate<Project> predicate) {
 
         }
 
         @Override
-        public void updateFilteredProjectDeadlineList (Predicate<Deadline> predicate) {
+        public void updateFilteredProjectDeadlineList(Predicate<Deadline> predicate) {
 
         }
 
         @Override
-        public void commitAddressBook (Model model, String message, TabIndex index) {
+        public void commitAddressBook(Model model, String message, TabIndex index) {
 
         }
 
         @Override
-        public void undoAddressBook (Model model) throws CommandException {
+        public void undoAddressBook(Model model) throws CommandException {
 
         }
 
         @Override
-        public void redoAddressBook (Model model) throws CommandException {
+        public void redoAddressBook(Model model) throws CommandException {
 
         }
 
         @Override
-        public String getPreviousCommand () {
+        public String getPreviousCommand() {
             return null;
         }
 
         @Override
-        public TabIndex getPreviousTabIndex () {
+        public TabIndex getPreviousTabIndex() {
             return null;
         }
     }

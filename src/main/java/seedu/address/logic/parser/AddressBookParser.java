@@ -77,6 +77,14 @@ public class AddressBookParser {
     private static final Logger logger = LogsCenter.getLogger(AddressBookParser.class);
     private static boolean isLocked = true;
 
+    public static void lock() {
+        isLocked = true;
+    }
+
+    public static void unlock() {
+        isLocked = false;
+    }
+
     /**
      * Parses user input into command for execution.
      *
@@ -214,13 +222,5 @@ public class AddressBookParser {
                 throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
             }
         }
-    }
-
-    public static void lock() {
-        isLocked = true;
-    }
-
-    public static void unlock() {
-        isLocked = false;
     }
 }

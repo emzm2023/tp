@@ -4,12 +4,19 @@ title: User Guide
 pageNav: 3
 ---
 
+<<<<<<< HEAD
+
 Seamlessly integrate contact, client, and project management, simplifying access to coding-related contacts,
 facilitating collaboration, and offering command-line efficiency for project managers
 
-CodeContact is a **desktop app for managing contacts, optimized for use via a Command Line Interface** (CLI) while still
-having the benefits of a Graphical User Interface (GUI). If you can type fast, CodeContact can get your contact
-management tasks done faster than traditional GUI apps.
+=======
+Seamlessly integrate contact, client, and project management, simplifying access to coding-related contacts,
+facilitating collaboration, and offering command-line efficiency for project managers
+
+> > > > > > > master
+> > > > > > > CodeContact is a **desktop app for managing contacts, optimized for use via a Command Line Interface** (CLI) while still
+> > > > > > > having the benefits of a Graphical User Interface (GUI). If you can type fast, CodeContact can get your contact
+> > > > > > > management tasks done faster than traditional GUI apps.
 
 ## Table of Contents
 
@@ -134,6 +141,20 @@ Here are some notes about these parameters.
 |-----------|-----------------------------|----------------------------------------------------------------|----------------|------------------|
 | `o/`      | organisation name of client | alphanumeric characters and spaces, and it should not be blank | Google         |                  |
 | `do/`     | document name of client     | alphanumeric characters and spaces, and it should not be blank | google.com     |                  |
+
+<<<<<<< HEAD
+=======
+
+#### Project Parameters
+
+| Parameter                      | Description            | Constraints                                                    | Valid Examples    | Invalid Examples |
+|--------------------------------|------------------------|----------------------------------------------------------------|-------------------|------------------|
+| `dr/`                          | description of project | alphanumeric characters and spaces, and it should not be blank | App to allow for  
+ different juices to be ordered |                        |
+| `dl/`                          | deadline of project    | alphanumeric characters and spaces, and it should not be blank | 19-12-2023,Design 
+ backend,HIGH,0                 |                        |
+
+> > > > > > > master
 
 #### Project Parameters
 
@@ -294,7 +315,7 @@ Example:
     * Continuing from the above example, CLI shows:
     ```
   The following user has been added:
-    New developer added: Mahidharah; 
+    New developer added: Mahidharah;
     Phone: 81256788;
     Email: aunus@nus.com;
     Address: Blk 88 Lorong 8 Serangoon Gardens, #08-88;
@@ -335,7 +356,7 @@ Example:
 * When command succeeds
     * Continuing from the above example, CLI shows:
     ```
-  New client added: Mahidharah; 
+  New client added: Mahidharah;
   Phone: 81256788;
   Email: aunus@nus.com;
   Address: Blk 88 Lorong 8 Serangoon Gardens, #08-88;
@@ -472,11 +493,11 @@ Example of usage: `edit-client 3 e/bob@gmail.com`
 When command succeeds, CLI shows:
 
 ```
-Edited Client: Bob; 
-Phone: 87654321; 
-Email: bob@gmail.com; 
-Address: Blk 123 Banana Road; 
-Organisation: Google; 
+Edited Client: Bob;
+Phone: 87654321;
+Email: bob@gmail.com;
+Address: Blk 123 Banana Road;
+Organisation: Google;
 Document: google.com
 Projects: ProjectA
 ```
@@ -537,13 +558,13 @@ Example of usage: `import-developer developers.csv`
 When command succeeds, CLI shows:
 
 ```
-New developer added: faiz; 
-Phone: 87654321; 
-Email: faiz@u.com; 
-Address: utown; 
-Date Joined: 12-12-2020; 
-Role: Developer; 
-Salary: 3333; 
+New developer added: faiz;
+Phone: 87654321;
+Email: faiz@u.com;
+Address: utown;
+Date Joined: 12-12-2020;
+Role: Developer;
+Salary: 3333;
 Projects: ProjectBAndroidApp
 ```
 
@@ -577,13 +598,13 @@ Example of usage: `import-client clients.csv`
 When command succeeds, CLI shows:
 
 ```
-New client added: Mahi; 
-Phone: 87554321; 
-Email: mahi@u.com; 
-Address: utown; 
-Organisation: Google; 
-Role: HR; 
-Document: docs.google.com/abd; 
+New client added: Mahi;
+Phone: 87554321;
+Email: mahi@u.com;
+Address: utown;
+Organisation: Google;
+Role: HR;
+Document: docs.google.com/abd;
 Projects: ProjectBAndroidApp
 ```
 
@@ -939,8 +960,14 @@ Undo the previous command you entered.
 Format: `undo`
 
 * Each time you type undo, you move back one stage.
+  <<<<<<< HEAD
 * If you made 5 changes and you wish to undo, you can enter the command `undo` 5 times. The system will remind you when
-  you cannot undo anymore.
+  =======
+* If you made 5 changes, and you wish to undo, you can enter the command `undo` 5 times. The system will remind you when
+
+> > > > > > > master
+> > > > > > > you cannot undo anymore.
+
 * `undo` works for all `edit`, `add-TYPE` and `delete` commands.
 * ❗**IMPORTANT**❗ `undo` does not work for all adding and deleting role functions. Undoing an
   `add-developer-role` will not delete that role.
@@ -952,14 +979,14 @@ Examples of usage: `undo`
 When command succeeds, CLI shows:
 
 ```
-Undo successful! The change below has been undone: 
-Deleted Developer: Amy; 
-Phone: 83566674; 
-Email: amy@example.com; 
-Address: 42, Clementi Ave 7, #02-2; 
-Date Joined: 23-11-2023; 
-Role: Frontend Developer; 
-Salary: 5000; 
+Undo successful! The change below has been undone:
+Deleted Developer: Amy;
+Phone: 83566674;
+Email: amy@example.com;
+Address: 42, Clementi Ave 7, #02-2;
+Date Joined: 23-11-2023;
+Role: Frontend Developer;
+Salary: 5000;
 Projects: CustomWebsiteAndroidApp
 ```
 
@@ -982,18 +1009,24 @@ Format: `redo`
 
 Examples of usage:
 
+<<<<<<< HEAD
+
 * You just `undo` delete developer and you wish to `redo` to add it back.
-  When command succeeds, CLI shows:
+  =======
+* You just `undo` delete developer, and you wish to `redo` to add it back.
+
+> > > > > > > master
+> > > > > > > When command succeeds, CLI shows:
 
 ```
 Redo successful! The change below has been redone:
-Deleted Developer: Amy; 
-Phone: 83566674; 
-Email: amy@example.com; 
-Address: 42, Clementi Ave 7, #02-2; 
-Date Joined: 23-11-2023; 
-Role: Frontend Developer; 
-Salary: 5000; 
+Deleted Developer: Amy;
+Phone: 83566674;
+Email: amy@example.com;
+Address: 42, Clementi Ave 7, #02-2;
+Date Joined: 23-11-2023;
+Role: Frontend Developer;
+Salary: 5000;
 Projects: CustomWebsiteAndroidApp
 ```
 

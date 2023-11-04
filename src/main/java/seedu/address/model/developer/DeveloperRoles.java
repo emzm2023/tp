@@ -18,6 +18,8 @@ import seedu.address.model.Model;
  * Guarantees: immutable; is valid as declared in {@link #isValidRole(String)}
  */
 public class DeveloperRoles {
+    public static final String NO_SUCH_DEVELOPER_ROLE = "There is no such developer role, "
+            + "please create role before proceeding";
     private static List<DeveloperRoles> roles = new ArrayList<>();
     private static boolean noRepeat;
     private static boolean notDefault;
@@ -30,9 +32,6 @@ public class DeveloperRoles {
         roles.add(new DeveloperRoles("Developer"));
         loadDeveloperRoles();
     }
-
-    public static final String NO_SUCH_DEVELOPER_ROLE = "There is no such developer role, "
-            + "please create role before proceeding";
 
     public final String role;
 

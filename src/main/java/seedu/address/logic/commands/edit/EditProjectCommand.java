@@ -154,20 +154,20 @@ public class EditProjectCommand extends Command {
                     desc, deadlines);
         }
 
-        public void setDescription(Description desc) {
-            this.desc = desc;
-        }
-
         public Optional<Description> getDescription() {
             return Optional.ofNullable(desc);
         }
 
-        public void setDeadlines(List<Deadline> deadlines) {
-            this.deadlines = (deadlines != null) ? new ArrayList<>(deadlines) : null;
+        public void setDescription(Description desc) {
+            this.desc = desc;
         }
 
         public Optional<List<Deadline>> getDeadlines() {
             return (deadlines != null) ? Optional.of(Collections.unmodifiableList(deadlines)) : Optional.empty();
+        }
+
+        public void setDeadlines(List<Deadline> deadlines) {
+            this.deadlines = (deadlines != null) ? new ArrayList<>(deadlines) : null;
         }
 
         @Override

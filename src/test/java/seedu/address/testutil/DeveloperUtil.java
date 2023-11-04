@@ -1,15 +1,12 @@
 package seedu.address.testutil;
 
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
-
-import java.util.Set;
-
 import seedu.address.logic.commands.add.AddDeveloperCommand;
 import seedu.address.logic.commands.edit.EditDeveloperCommand;
 import seedu.address.model.developer.Developer;
+
+import java.util.Set;
+
+import static seedu.address.logic.parser.CliSyntax.*;
 
 /**
  * A utility class for Developer.
@@ -33,7 +30,7 @@ public class DeveloperUtil {
         sb.append(PREFIX_EMAIL + developer.getEmail().value + " ");
         sb.append(PREFIX_ADDRESS + developer.getAddress().value + " ");
         developer.getTags().stream().forEach(
-            s -> sb.append(PREFIX_TAG + s.tagName + " ")
+                s -> sb.append(PREFIX_TAG + s.tagName + " ")
         );
         return sb.toString();
     }

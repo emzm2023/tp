@@ -1,13 +1,8 @@
 package seedu.address.model.person;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
-import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalPersons.ALICE;
-import static seedu.address.testutil.TypicalPersons.BOB;
+import seedu.address.model.person.exceptions.DeveloperNotFoundException;
+import seedu.address.model.person.exceptions.DuplicatePersonException;
+import seedu.address.testutil.PersonBuilder;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,9 +10,11 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.model.person.exceptions.DuplicatePersonException;
-import seedu.address.model.person.exceptions.DeveloperNotFoundException;
-import seedu.address.testutil.PersonBuilder;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static seedu.address.testutil.Assert.assertThrows;
+import static seedu.address.testutil.TypicalPersons.ALICE;
+import static seedu.address.testutil.TypicalPersons.BOB;
 
 public class UniqueDeveloperListTest {
 
@@ -165,7 +162,7 @@ public class UniqueDeveloperListTest {
     @Test
     public void asUnmodifiableObservableList_modifyList_throwsUnsupportedOperationException() {
         assertThrows(UnsupportedOperationException.class, ()
-            -> uniquePersonList.asUnmodifiableObservableList().remove(0));
+                -> uniquePersonList.asUnmodifiableObservableList().remove(0));
     }
 
     @Test

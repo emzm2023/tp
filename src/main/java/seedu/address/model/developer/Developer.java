@@ -23,6 +23,7 @@ import seedu.address.model.person.Phone;
  * Guarantees: details are present and not null, field values are validated, immutable.
  */
 public class Developer extends Person {
+
     private final Salary salary;
     private final Date dateJoined;
     private final GithubId githubId;

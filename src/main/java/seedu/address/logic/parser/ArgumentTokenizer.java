@@ -62,7 +62,7 @@ public class ArgumentTokenizer {
      * {@code argsString} starting from index {@code fromIndex}. An occurrence
      * is valid if there is a whitespace before {@code prefix}. Returns -1 if no
      * such occurrence can be found.
-     * 
+     * <p>
      * E.g if {@code argsString} = "e/hip/900", {@code prefix} = "p/" and
      * {@code fromIndex} = 0, this method returns -1 as there are no valid
      * occurrences of "p/" with whitespace before it. However, if
@@ -128,8 +128,8 @@ public class ArgumentTokenizer {
      * Represents a prefix's position in an arguments string.
      */
     private static class PrefixPosition {
-        private int startPosition;
         private final Prefix prefix;
+        private int startPosition;
 
         PrefixPosition(Prefix prefix, int startPosition) {
             this.prefix = prefix;

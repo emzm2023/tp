@@ -28,14 +28,14 @@ public interface Model {
     Predicate<Project> PREDICATE_SHOW_NO_PROJECT = unused -> false;
 
     /**
-     * Replaces user prefs data with the data in {@code userPrefs}.
-     */
-    void setUserPrefs(ReadOnlyUserPrefs userPrefs);
-
-    /**
      * Returns the user prefs.
      */
     ReadOnlyUserPrefs getUserPrefs();
+
+    /**
+     * Replaces user prefs data with the data in {@code userPrefs}.
+     */
+    void setUserPrefs(ReadOnlyUserPrefs userPrefs);
 
     /**
      * Returns the user prefs' GUI settings.

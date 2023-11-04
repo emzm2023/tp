@@ -1,16 +1,16 @@
 package seedu.address.logic.parser;
 
-import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
-import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
+import seedu.address.logic.commands.find.FindDeveloperCommand;
+import seedu.address.logic.parser.find.FindDeveloperCommandParser;
+import seedu.address.model.developer.NameDeveloperContainsKeywordsPredicate;
 
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.logic.commands.find.FindDeveloperCommand;
-import seedu.address.logic.parser.find.FindDeveloperCommandParser;
-import seedu.address.model.developer.NameDeveloperContainsKeywordsPredicate;
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
+import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
 
 public class FindDeveloperCommandParserTest {
 

@@ -44,7 +44,12 @@ can get your contact management tasks done faster than traditional GUI apps.
    ![Ui](images/Ui.png)<br>
    For help navigating the GUI, click [here](#navigating)
 
+<<<<<<< HEAD
+
 1.
+
+=======
+> > > > > > > master
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will
    open the help window.<br>

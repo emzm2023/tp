@@ -190,68 +190,68 @@ public class EditClientCommand extends Command {
                     name, phone, email, address, projects, role, organisation, document);
         }
 
-        public void setName(Name name) {
-            this.name = name;
-        }
-
         public Optional<Name> getName() {
             return Optional.ofNullable(name);
         }
 
-        public void setPhone(Phone phone) {
-            this.phone = phone;
+        public void setName(Name name) {
+            this.name = name;
         }
 
         public Optional<Phone> getPhone() {
             return Optional.ofNullable(phone);
         }
 
-        public void setEmail(Email email) {
-            this.email = email;
+        public void setPhone(Phone phone) {
+            this.phone = phone;
         }
 
         public Optional<Email> getEmail() {
             return Optional.ofNullable(email);
         }
 
-        public void setAddress(Address address) {
-            this.address = address;
+        public void setEmail(Email email) {
+            this.email = email;
         }
 
         public Optional<Address> getAddress() {
             return Optional.ofNullable(address);
         }
 
-        public void setProjects(Set<String> projects) {
-            this.projects = (projects != null) ? new HashSet<>(projects) : null;
+        public void setAddress(Address address) {
+            this.address = address;
         }
 
         public Optional<Set<String>> getProjects() {
             return (projects != null) ? Optional.of(Collections.unmodifiableSet(projects)) : Optional.empty();
         }
 
-        public void setOrganisation(Name organisation) {
-            this.organisation = organisation;
+        public void setProjects(Set<String> projects) {
+            this.projects = (projects != null) ? new HashSet<>(projects) : null;
         }
 
         public Optional<Name> getOrganisation() {
             return Optional.ofNullable(organisation);
         }
 
-        public void setDocument(Document document) {
-            this.document = document;
+        public void setOrganisation(Name organisation) {
+            this.organisation = organisation;
         }
 
         public Optional<Document> getDocument() {
             return Optional.ofNullable(document);
         }
 
-        public void setRole(ClientRoles role) {
-            this.role = role;
+        public void setDocument(Document document) {
+            this.document = document;
         }
 
         public Optional<ClientRoles> getRole() {
             return Optional.ofNullable(role);
+        }
+
+        public void setRole(ClientRoles role) {
+            this.role = role;
         }
 
         @Override

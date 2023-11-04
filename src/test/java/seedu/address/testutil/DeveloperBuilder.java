@@ -1,14 +1,15 @@
 package seedu.address.testutil;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import seedu.address.model.commons.Date;
 import seedu.address.model.commons.Name;
 import seedu.address.model.developer.*;
-import seedu.address.model.person.*;
-import seedu.address.model.project.Project;
+import seedu.address.model.person.Address;
+import seedu.address.model.person.Email;
+import seedu.address.model.person.Phone;
 import seedu.address.model.util.SampleDataUtil;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A utility class to help with building Developer objects.

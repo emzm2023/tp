@@ -211,36 +211,36 @@ public class EditDeveloperCommand extends Command {
             return Optional.ofNullable(name);
         }
 
-        public void setPhone(Phone phone) {
-            this.phone = phone;
-        }
-
         public Optional<Phone> getPhone() {
             return Optional.ofNullable(phone);
         }
 
-        public void setEmail(Email email) {
-            this.email = email;
+        public void setPhone(Phone phone) {
+            this.phone = phone;
         }
 
         public Optional<Email> getEmail() {
             return Optional.ofNullable(email);
         }
 
-        public void setAddress(Address address) {
-            this.address = address;
+        public void setEmail(Email email) {
+            this.email = email;
         }
 
         public Optional<Address> getAddress() {
             return Optional.ofNullable(address);
         }
 
-        public void setProjects(Set<String> projects) {
-            this.projects = (projects != null) ? new HashSet<>(projects) : null;
+        public void setAddress(Address address) {
+            this.address = address;
         }
 
         public Optional<Set<String>> getProjects() {
             return (projects != null) ? Optional.of(Collections.unmodifiableSet(projects)) : Optional.empty();
+        }
+
+        public void setProjects(Set<String> projects) {
+            this.projects = (projects != null) ? new HashSet<>(projects) : null;
         }
 
         public void setDateJoined(Date dateJoined) {
@@ -251,36 +251,36 @@ public class EditDeveloperCommand extends Command {
             return Optional.ofNullable(dateJoined);
         }
 
-        public void setRole(DeveloperRoles role) {
-            this.role = role;
-        }
-
         public Optional<DeveloperRoles> getRole() {
             return Optional.ofNullable(role);
         }
 
-        public void setSalary(Salary salary) {
-            this.salary = salary;
+        public void setRole(DeveloperRoles role) {
+            this.role = role;
         }
 
         public Optional<Salary> getSalary() {
             return Optional.ofNullable(salary);
         }
 
-        public void setGithubId(GithubId githubId) {
-            this.githubId = githubId;
+        public void setSalary(Salary salary) {
+            this.salary = salary;
         }
 
         public Optional<GithubId> getGithubId() {
             return Optional.ofNullable(githubId);
         }
 
-        public void setRating(Rating rating) {
-            this.rating = rating;
+        public void setGithubId(GithubId githubId) {
+            this.githubId = githubId;
         }
 
         public Optional<Rating> getRating() {
             return Optional.ofNullable(rating);
+        }
+
+        public void setRating(Rating rating) {
+            this.rating = rating;
         }
 
         @Override

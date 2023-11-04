@@ -1,8 +1,5 @@
 package seedu.address.logic.parser.imports;
 
-import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.Messages.MESSAGE_INVALID_FILE;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
 
+import seedu.address.logic.Messages;
 import seedu.address.logic.commands.imports.ImportClientCommand;
 import seedu.address.logic.parser.Parser;
 import seedu.address.logic.parser.ParserUtil;
@@ -39,7 +37,7 @@ public class ImportClientCommandParser implements Parser<ImportClientCommand> {
             // Check if the CSV file contains valid column names
             boolean isValid = checkColumnNames(br.readLine());
             if (!isValid) {
-                throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ImportClientCommand.MESSAGE_USAGE));
+                throw new ParseException(String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, ImportClientCommand.MESSAGE_USAGE));
             }
 
             ArrayList<Client> toAddList = new ArrayList<>();
@@ -69,7 +67,7 @@ public class ImportClientCommandParser implements Parser<ImportClientCommand> {
 
             return new ImportClientCommand(toAddList);
         } catch (FileNotFoundException ex) {
-            throw new ParseException(MESSAGE_INVALID_FILE);
+            throw new ParseException(Messages.MESSAGE_INVALID_FILE);
         } catch (IOException e) {
             throw new ParseException("Error reading line from file " + fileName);
         }

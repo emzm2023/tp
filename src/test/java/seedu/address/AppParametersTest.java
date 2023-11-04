@@ -1,8 +1,6 @@
 package seedu.address;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import javafx.application.Application;
 
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -12,7 +10,7 @@ import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
-import javafx.application.Application;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AppParametersTest {
 

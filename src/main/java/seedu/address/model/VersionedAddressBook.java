@@ -6,14 +6,13 @@ import java.util.List;
 import seedu.address.logic.commands.TabIndex;
 import seedu.address.logic.commands.exceptions.CommandException;
 
-
 public class VersionedAddressBook extends AddressBook {
+    public static final String INVALID_REDO_COMMAND = "You have reached the last step, unable to redo";
+    public static final String INVALID_UNDO_COMMAND = "You have reached the first step, unable to undo";
     private List<AddressBook> addressBookStateList;
     private List<String> successfulCommandMessages;
     private List<TabIndex> tabIndex;
     private int currentStatePointer;
-    public static final String INVALID_REDO_COMMAND = "You have reached the last step, unable to redo";
-    public static final String INVALID_UNDO_COMMAND = "You have reached the first step, unable to undo";
 
     public VersionedAddressBook(ReadOnlyAddressBook initialAddressBook) {
         addressBookStateList = new ArrayList<>();

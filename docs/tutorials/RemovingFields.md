@@ -121,12 +121,14 @@ does not cause the tests to fail, it is not good practice to let cruft from old 
 
 ```json
 {
-  "developers": [ {
-    "name": "Person with invalid name field: Ha!ns Mu@ster",
-    "phone": "9482424",
-    "email": "hans@example.com",
-    "address": "4th street"
-  } ]
+  "developers": [
+    {
+      "name": "Person with invalid name field: Ha!ns Mu@ster",
+      "phone": "9482424",
+      "email": "hans@example.com",
+      "address": "4th street"
+    }
+  ]
 }
 ```
 
