@@ -14,7 +14,8 @@ public class ChangePasswordCommandParser implements Parser<ChangePasswordCommand
         requireNonNull(args);
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_PASSWORD, PREFIX_NEW_PASSWORD);
 
-        if (argMultimap.getValue(PREFIX_PASSWORD).isPresent() && argMultimap.getValue(PREFIX_NEW_PASSWORD).isPresent()) {
+        if (argMultimap.getValue(PREFIX_PASSWORD).isPresent()
+                && argMultimap.getValue(PREFIX_NEW_PASSWORD).isPresent()) {
             String currentPw = ParserUtil.parsePassword(argMultimap.getValue(PREFIX_PASSWORD).get());
             String newPw = ParserUtil.parsePassword(argMultimap.getValue(PREFIX_NEW_PASSWORD).get());
             return new ChangePasswordCommand(currentPw, newPw);
