@@ -16,9 +16,9 @@ import seedu.address.model.person.exceptions.DuplicateDeveloperException;
 /**
  * A list of developers that enforces uniqueness between its elements and does not allow nulls.
  * A developer is considered unique by comparing using {@code Developer#isSameDeveloper(Developer)}.
- * As such, adding and updating of developers use Developer#isSameDeveloper(Developer) for equality to ensure that 
+ * As such, adding and updating of developers use Developer#isSameDeveloper(Developer) for equality to ensure that
  * the developer being added or updated is unique in terms of identity in the UniqueDeveloperList.
- * However, the removal of a developer uses Developer#equals(Object) to ensure that the developer with exactly the 
+ * However, the removal of a developer uses Developer#equals(Object) to ensure that the developer with exactly the
  * same fields will be removed.
  * <p>
  * Supports a minimal set of list operations.
