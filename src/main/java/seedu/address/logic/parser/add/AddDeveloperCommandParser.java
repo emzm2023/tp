@@ -82,7 +82,7 @@ public class AddDeveloperCommandParser implements Parser<AddDeveloperCommand> {
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
         Date dateJoined =
-                ParserUtil.parseDateJoined(argMultimap.getValue(PREFIX_DATEJOINED).orElse(new SimpleDateFormat("dd-MM" 
+                ParserUtil.parseDateJoined(argMultimap.getValue(PREFIX_DATEJOINED).orElse(new SimpleDateFormat("dd-MM"
                         + "-yyyy").format(new java.util.Date())));
         DeveloperRoles role = ParserUtil.parseDeveloperRole(argMultimap.getValue(PREFIX_ROLE).get());
         Salary salary = ParserUtil.parseSalary(argMultimap.getValue(PREFIX_SALARY).get());

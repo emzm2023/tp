@@ -24,12 +24,11 @@ public class MarkDeadlineCommand extends Command {
 
     public static final String MESSAGE_USAGE =
             COMMAND_WORD + ": Marks the specified deadline of the specified project " + "as done. \n"
-                    + "DEADLINE_INDEX must be a positive integer representing the index of the deadline in the " 
-                    + "displayed "
-                    + "deadline table, and PROJECT_INDEX must be a positive integer which is the project's index " 
-                    + "number in the "
-                    + "displayed project list. \n" + "Parameters: " + "PROJECT_INDEX DEADLINE_INDEX \n" + "Example: "
-                    + COMMAND_WORD + " 1 2";
+                    + "DEADLINE_INDEX must be a positive integer representing the index of the deadline in the "
+                    + "displayed deadline table, and PROJECT_INDEX must be a positive integer which is the project's" 
+                    + "index number in the displayed project list. \n"
+                    + "Parameters: PROJECT_INDEX DEADLINE_INDEX \n"
+                    + "Example: " + COMMAND_WORD + " 1 2";
 
     private final Index deadlineIndex;
     private final Index projIndex;

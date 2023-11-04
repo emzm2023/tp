@@ -8,7 +8,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  * Guarantees: immutable; is validated.
  */
 public class Description {
-    public static final String MESSAGE_CONSTRAINTS = "Description should only contain alphanumeric characters and " 
+    public static final String MESSAGE_CONSTRAINTS = "Description should only contain alphanumeric characters and "
             + "spaces, and it should not be blank.";
 
 
