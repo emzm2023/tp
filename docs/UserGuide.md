@@ -211,7 +211,7 @@ Here is a quick summary of each GUI component within CodeContact:
 <div markdown="block" class="alert alert-warning">
 If you executed a `find` command in developer tab and switched to the client tab, when you return to the developer tab the find results will be cleared and
 the whole list of developers will be shown again. This is the intended behavior of CodeContact as we hope that this can save you the time
-from always needing to call the list command. 
+from always needing to call the list command.
 </div>
 
 --------------------------------------------------------------------------------------------------------------------
@@ -253,9 +253,9 @@ This is a tutorial for **first-time** CodeContact users.
 
 
 1. You can **change the password** to unlock CodeContact.
-    * Enter the command `change-password pw/Password123! npw/<yourNewPassword>` in the command box
+    * Enter the command `change-password pw/Password123! npw/<yourNewPassword>` in the command box.
    <div markdown="block" class="alert alert-info">:bulb:
-You can always lock and unlock CodeContact using the `lock` and `unlock` commands 
+You can always lock and unlock CodeContact using the `lock` and `unlock` commands.
 </div>
 
 1. Let us try **adding a project** to our CodeContact.

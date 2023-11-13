@@ -661,10 +661,10 @@ the displayed project list has a project with the index `2` with at least `1` de
 **Aspect: Execution of command**
 * Alternative 1: Implement methods in `ModelManager` class that can directly change the `isDone` status of the deadlines
 of a project based on the given project index and deadline index.
-  * Pros: 
+  * Pros:
     * More aligned with OOP principles.
     * Mirrors sequence flow of other commands and can be implemented using current code architecture.
-  * Cons: 
+  * Cons:
     * Due to container structure of `Project` and `Deadline`, changing the status of deadlines needs to be done
     through projects, so more methods need to be added to achieve this.
     * Given the GUI display of project deadlines in a Javafx TableView, makes it more complicated for changes in
@@ -791,7 +791,7 @@ the use case. Such associated pairs of use cases are listed in the table below.
 
 #### **Use case:** UC1 - Unlock System
 
-**Preconditions:** 
+**Preconditions:**
 1. User is not logged in
 
 **Guarantees:**
